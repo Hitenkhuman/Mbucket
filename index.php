@@ -24,7 +24,7 @@
         <a class="nav-link" href="#">Features</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Pricccccing</a>
+        <a class="nav-link" href="#">Pricing</a>
       </li>
       
     </ul>
