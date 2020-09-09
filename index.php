@@ -34,12 +34,11 @@
     </div>
     <span class="navbar-text">
       <a data-toggle="modal" data-target="#signinModal">
-        <span class="fa fa-sign-in"></span> Signin&nbsp;
-       </a>
+      <i class="fas fa-user-plus"> &nbsp;</i></a>
     </span>
     <span class="navbar-text">
       <a data-toggle="modal" data-target="#loginModal">
-        <span class="fa fa-sign-in"></span> Login</a>
+        <span class="fa fa-sign-in"></span></a>
     </span>
 
   </nav>
