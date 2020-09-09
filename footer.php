@@ -95,6 +95,11 @@
               <i class="fab fa-linkedin-in"></i>
             </a>
           </li>
+          <li class="list-inline-item">
+            <a class="btn-floating btn-sm rgba-white-slight mx-1">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </li>
         </ul>
       </div>
 
