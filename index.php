@@ -10,12 +10,32 @@
   <link rel="stylesheet" href="customcss.css">
 </head>
 <body>
-  <nav class="navbar navbar-expand-sm navbar-dark bg-primary fixed-top">
+  <header class="bg-primary">
+    <a href="">logo</a>
+  <form class="form-inline">
+    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    <a href="">
+      <i class="fas fa-search mr-3"></i>
+    </a>
+  </form>
+
+    <span class="navbar-text">
+      <a data-toggle="modal" data-target="#signinModal" data-toggle="tooltip" data-placement="bottom" title="sign in to create a new account ">
+      <span class="fas fa-user-plus"> &nbsp;</span></a>
+    </span>
+    <span class="navbar-text">
+      <a data-toggle="modal" data-target="#loginModal" data-toggle="tooltip" data-placement="bottom" title="log in to open your old account ">
+        <span class="fa fa-sign-in"></span></a>
+    </span>
+
+  </header>
+
+  <nav class="navbar navbar-expand-sm navbar-dark bg-primary">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <a class="navbar-brand" href="#">Navbar</a>
 
+    
 
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
@@ -28,17 +48,10 @@
         <li class="nav-item">
           <a class="nav-link" href="#">Pricing</a>
         </li>
-
       </ul>
     </div>
-    <span class="navbar-text">
-      <a data-toggle="modal" data-target="#signinModal">
-      <i class="fas fa-user-plus"> &nbsp;</i></a>
-    </span>
-    <span class="navbar-text">
-      <a data-toggle="modal" data-target="#loginModal">
-        <span class="fa fa-sign-in"></span></a>
-    </span>
+
+    
 
   </nav>
   <div id="loginModal" class="modal fade" role="dialog">
