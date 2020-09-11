@@ -13,31 +13,32 @@
 <body>
   <header class="bg-primary">
     <div class="row p-2">
-      <div class="col-12  col-md-2 align-self-start">
+      <div class="col-8  col-md-2">
         <a href="">logo</a>
         here is logo
       </div>
-      <div class="col-10 col-md-8 align-self-center ">
+      <div class="col-12 col-md-8  order-12 order-md-1">
         <form class="form-inline">
-          <input class="form-control mr-sm-2 w-75 mr-2 ml-5" type="search" placeholder="Search" aria-label="Search">
+          <input class="form-control mr-sm-2 w-75 ml-3 mr-2" type="search" placeholder="Search" aria-label="Search">
           <a href="">
             <i class="fas fa-search mr-3" style="color: white;"></i>
           </a>
         </form>
       </div>
-      <div class="col-2  col-md-2">
-        <span class="navbar-text mr-md-2">
+
+      <div class="col-2 col-md-1 order-1 order-md-11">
+        <span class="navbar-text">
           <a data-toggle="modal" data-target="#signinModal" data-toggle="tooltip" data-placement="bottom" title="sign in ">
             <span class="fas fa-user-plus"> &nbsp;</span></a>
         </span>
-
-
+      </div>
+      <div class="col-2 col-md-1 order-2 order-md-12">
         <span class="navbar-text">
           <a data-toggle="modal" data-target="#loginModal" data-toggle="tooltip" data-placement="bottom" title="log in">
             <span class="fa fa-sign-in"></span></a>
         </span>
-
       </div>
+
     </div>
 
 
@@ -196,7 +197,7 @@
   <div class="info">
     <div class="container-fluid">
       <div class="row">
-        <div class="col-12 col-md-6 col-lg-3 p-5">
+        <div class="col-12 col-md-6 col-lg-3 p-sm-5">
           <div class="card" style="width: 18rem;">
             <img src="..." class="card-img-top" alt="...">
             <div class="card-body">
@@ -206,7 +207,7 @@
             </div>
           </div>
         </div>
-        <div class="col-12 col-md-6 col-lg-3 p-5">
+        <div class="col-12 col-md-6 col-lg-3 p-sm-5">
           <div class="card" style="width: 18rem;">
             <img src="..." class="card-img-top" alt="...">
             <div class="card-body">
@@ -216,7 +217,7 @@
             </div>
           </div>
         </div>
-        <div class="col-12 col-md-6 col-lg-3 p-5">
+        <div class="col-12 col-md-6 col-lg-3 p-sm-5">
           <div class="card" style="width: 18rem;">
             <img src="..." class="card-img-top" alt="...">
             <div class="card-body">
@@ -226,7 +227,7 @@
             </div>
           </div>
         </div>
-        <div class="col-12 col-md-6 col-lg-3 p-5">
+        <div class="col-12 col-md-6 col-lg-3 p-sm-5">
           <div class="card" style="width: 18rem;">
             <img src="..." class="card-img-top" alt="...">
             <div class="card-body">
