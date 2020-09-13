@@ -12,9 +12,16 @@
 
 <body>
   <header class="bg-primary">
-    <div class="row p-2">
-      <div class="col-8  col-md-2">
-        <a href="">logo</a>
+  <div class="row p-2">
+    <div class="col-1 d-sm-none">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <!-- <span class="navbar-toggler-icon"></span> -->
+      <i class="fas fa-bars"></i>
+    </button>
+    </div>
+    
+      <div class="col-7  col-md-2">
+        <a href=""></a>
         here is logo
       </div>
       <div class="col-12 col-md-8  order-12 order-md-1">
@@ -48,9 +55,7 @@
   </header>
 
   <nav class="navbar navbar-expand-sm navbar-dark bg-secondary">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+    
 
 
 
