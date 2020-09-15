@@ -1,0 +1,43 @@
+.headernav {
+  background-color: #242582;
+  color: white;
+}
+
+.navbar {
+  background-color: #2F2FA2;
+}
+
+.nav-link {
+  color: white;
+}
+
+.nav-link:hover {
+  color: #F64C72;
+}
+
+.current {
+  color: yellow;
+  font-weight: bold;
+}
+
+.scrolling-wrapper {
+  overflow-x: auto;
+}
+
+.scrolling-wrapper::-webkit-scrollbar {
+  width: 0;
+}
+
+footer {
+  background-color: #2F2FA2;
+  color: white;
+}
+
+.footer-link {
+  color: yellow;
+}
+
+.social-icon {
+  color: yellowgreen;
+}
+/*# sourceMappingURL=home.css.map */

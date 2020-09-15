@@ -1,0 +1,36 @@
+@import "./colors";
+.headernav{
+    background-color: $nav;
+    color: white;
+}
+.navbar{
+    background-color: $background;  
+    
+}
+
+.nav-link{
+    color: white;
+    &:hover{
+        color:$buttn;
+    }
+}
+.current{
+    color:yellow;
+    font-weight: bold;
+}
+.scrolling-wrapper{
+	overflow-x: auto;
+}
+.scrolling-wrapper::-webkit-scrollbar{
+    width: 0;
+}
+footer{
+    background-color: $background;
+    color: white;
+}
+.footer-link{
+    color: yellow;
+}
+.social-icon{
+    color: yellowgreen;
+}
