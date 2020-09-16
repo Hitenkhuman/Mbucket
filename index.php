@@ -86,7 +86,7 @@
 
   </nav>
   <div id="loginModal" class="modal fade" role="dialog">
-    <div class="modal-dialog modal-lg" role="content">
+    <div class="modal-dialog modal-md modal-dialog-centered" role="content">
       <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
@@ -96,11 +96,11 @@
         <div class="modal-body">
           <form>
             <div class="form-row">
-              <div class="form-group col-sm-4">
+              <div class="form-group col-12">
                 <label class="sr-only" for="exampleInputEmail3">Email address</label>
                 <input type="email" class="form-control form-control-sm mr-1" id="exampleInputEmail3" placeholder="Enter email">
               </div>
-              <div class="form-group col-sm-4">
+              <div class="form-group col-12">
                 <label class="sr-only" for="exampleInputPassword3">Password</label>
                 <input type="password" class="form-control form-control-sm mr-1" id="exampleInputPassword3" placeholder="Password">
               </div>
