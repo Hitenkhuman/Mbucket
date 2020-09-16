@@ -7,6 +7,8 @@
   <script src="https://kit.fontawesome.com/4dedb1023f.js" crossorigin="anonymous"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home Page</title>
+  <link rel="icon" href="./images/logo.png" type="image/png">
+
   <link rel="stylesheet" href="./css/home.css">
 </head>
 
@@ -61,7 +63,7 @@
     <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item pl-5">
-          <a class="nav-link current " href="#">Home<span class="sr-only">(current)</span></a>
+          <a class="nav-link current " href="index.php">Home<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item pl-5">
           <a class="nav-link" href="#">Mobiles</a>
@@ -73,7 +75,7 @@
           <a class="nav-link" href="#">Price-Search</a>
         </li>
         <li class="nav-item pl-5">
-          <a class="nav-link" href="#">About US</a>
+          <a class="nav-link" href="aboutus.php">About US</a>
         </li>
         <li class="nav-item pl-5">
           <a class="nav-link" href="#">Contact</a>
@@ -105,17 +107,17 @@
               </div>
               <div class="form-group col-11 row">
                 <label class="sr-only" for="exampleInputPassword3">Password</label>
-                <i class="fas fa-lock p-2"  aria-hidden="true"></i>
+                <i class="fas fa-lock p-2" aria-hidden="true"></i>
                 <input type="password" class="form-control col-10 form-control-sm mr-1" id="exampleInputPassword3" placeholder="Password">
               </div>
               <div class="form-group col-11 row">
                 <label class="sr-only" for="exampleInputPassword3">Capta</label>
                 <span class="bg-secondary col-10 col-sm-5">fjvbfj</span>
-                <i class="fas fa-sync p-2"  aria-hidden="true"></i>
+                <i class="fas fa-sync p-2" aria-hidden="true"></i>
                 <input type="text" class="form-control col-10 col-sm-5 form-control-sm mr-1" id="exampleInputcapta3" placeholder="capta">
               </div>
-            
-              
+
+
 
               <div class="col-sm-auto">
                 <div class="form-check">
@@ -126,9 +128,9 @@
               </div>
             </div>
             <div class="form-row">
-            <button type="submit" class="btn btn-primary btn-sm m-2">Log in</button>  
-            <button type="button" class="btn btn-secondary btn-sm m-2" data-dismiss="modal">Cancel</button>
-              
+              <button type="submit" class="btn btn-primary btn-sm m-2">Log in</button>
+              <button type="button" class="btn btn-secondary btn-sm m-2" data-dismiss="modal">Cancel</button>
+
             </div>
           </form>
         </div>
