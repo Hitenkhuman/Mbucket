@@ -85,6 +85,8 @@
 
 
   </nav>
+
+
   <div id="loginModal" class="modal fade" role="dialog">
     <div class="modal-dialog modal-md modal-dialog-centered" role="content">
       <!-- Modal content-->
@@ -96,14 +98,25 @@
         <div class="modal-body">
           <form>
             <div class="form-row">
-              <div class="form-group col-12">
+              <div class="form-group col-11 row">
                 <label class="sr-only" for="exampleInputEmail3">Email address</label>
-                <input type="email" class="form-control form-control-sm mr-1" id="exampleInputEmail3" placeholder="Enter email">
+                <i class="fas fa-user p-2" aria-hidden="true"></i>
+                <input type="email" class="form-control col-10 form-control-sm mr-1" id="exampleInputEmail3" placeholder="Enter email">
               </div>
-              <div class="form-group col-12">
+              <div class="form-group col-11 row">
                 <label class="sr-only" for="exampleInputPassword3">Password</label>
-                <input type="password" class="form-control form-control-sm mr-1" id="exampleInputPassword3" placeholder="Password">
+                <i class="fas fa-lock p-2"  aria-hidden="true"></i>
+                <input type="password" class="form-control col-10 form-control-sm mr-1" id="exampleInputPassword3" placeholder="Password">
               </div>
+              <div class="form-group col-11 row">
+                <label class="sr-only" for="exampleInputPassword3">Capta</label>
+                <span class="bg-secondary col-10 col-sm-5">fjvbfj</span>
+                <i class="fas fa-sync p-2"  aria-hidden="true"></i>
+                <input type="text" class="form-control col-10 col-sm-5 form-control-sm mr-1" id="exampleInputcapta3" placeholder="capta">
+              </div>
+            
+              
+
               <div class="col-sm-auto">
                 <div class="form-check">
                   <input class="form-check-input" type="checkbox">
@@ -113,14 +126,17 @@
               </div>
             </div>
             <div class="form-row">
-              <button type="button" class="btn btn-secondary btn-sm ml-auto" data-dismiss="modal">Cancel</button>
-              <button type="submit" class="btn btn-primary btn-sm ml-1">Log in</button>
+            <button type="submit" class="btn btn-primary btn-sm m-2">Log in</button>  
+            <button type="button" class="btn btn-secondary btn-sm m-2" data-dismiss="modal">Cancel</button>
+              
             </div>
           </form>
         </div>
       </div>
     </div>
   </div>
+
+
   <div class="main">
     <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
       <ol class="carousel-indicators">
