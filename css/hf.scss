@@ -1,49 +1,34 @@
 .headernav {
-  background-color: #242582;
+  background-color: $nav;
   color: white;
 }
-
 .navbar {
-  background-color: #2F2FA2;
+  background-color: $background;
 }
 
 .nav-link {
   color: white;
+  &:hover {
+    color: $buttn;
+  }
 }
-
-.nav-link:hover {
-  color: #F64C72;
-}
-
 .current {
   color: yellow;
   font-weight: bold;
 }
 
 footer {
-  background-color: #2F2FA2;
+  background-color: $background;
   color: white;
 }
-
 .footer-link {
   color: yellow;
 }
-
 .social-icon {
   color: yellowgreen;
 }
-
 hr {
   height: 1px;
   background-color: yellow;
   border: none;
 }
-
-.scrolling-wrapper {
-  overflow-x: auto;
-}
-
-.scrolling-wrapper::-webkit-scrollbar {
-  width: 0;
-}
-/*# sourceMappingURL=home.css.map */

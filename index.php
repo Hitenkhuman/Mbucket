@@ -414,7 +414,7 @@
         <!--Copyright-->
         <p class="text-center text-md-left">© 2020 Copyright:
           <a href="https://mdbootstrap.com/">
-            <strong> Mobileinfo.com</strong>
+            <strong> M-bucket.com</strong>
           </a>
         </p>
         <!-- Grid column -->

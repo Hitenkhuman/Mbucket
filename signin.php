@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
         Sign in</title>
-    <link rel="stylesheet" href="./css/home.css">
+    <link rel="stylesheet" href="./css/signin.css">
     <link rel="icon" href="./images/logo.png" type="image/png">
 </head>
 
@@ -38,9 +38,9 @@
 
             <div class="col-2 col-md-1 order-1 order-md-11">
 
-                <a href="signin.php" style="color: white;">
+                <!-- <a href="signin.php" style="color: white;">
                     <span class="fas fa-user-plus"> &nbsp;</span>
-                </a>
+                </a> -->
 
             </div>
             <div class="col-2 col-md-1 order-2 order-md-12">
@@ -63,7 +63,7 @@
         <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item pl-5">
-                    <a class="nav-link current " href="#">Home<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item pl-5">
                     <a class="nav-link" href="#">Mobiles</a>
@@ -128,48 +128,47 @@
     <h1>Sign in</h1>
 
     <div class="container">
-
         <form class="form row">
             <div class="form-group col-12 row">
-                <label for="email" class="col-1"><i class="fas fa-user" aria-hidden="true"></i></label>
-                <input type="email" class="form-control col-5" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email id">
-                <small id="emailHelp" class="form-text text-muted col-4">We'll never share your email with anyone else.</small>
+                <i class="fas fa-user p-2" aria-hidden="true"></i>
+                <input type="email" class="form-control col-10 col-sm-8" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email id">
+                <small id="emailHelp" class="form-text text-muted col-12 col-sm-3">We'll never share your email with anyone else.</small>
             </div>
             <div class="form-group col-12 row">
-                <label for="mobile" class="col-md-2"><i class="fas fa-mobile" aria-hidden="true"></i></label>
-                <input type="text" class="form-control col-md-5" id="mobile" aria-describedby="mobileHelp" placeholder="Mobile Number">
-                <small id="mobileHelp" class="form-text text-muted col-md-4">We'll never share your mobile with anyone else.</small>
+                <i class="fas fa-mobile p-2" aria-hidden="true"></i>
+                <input type="text" class="form-control col-10 col-sm-8" id="mobile" aria-describedby="mobileHelp" placeholder="Mobile Number">
+                <small id="mobileHelp" class="form-text text-muted col-12 col-sm-3">We'll never share your mobile with anyone else.</small>
             </div>
             <div class="form-group col-12 row">
-                <button class="btn btn-primary offset-md-5 offset-4">
+                <button class="btn btn-primary offset-md-2 offset-4 offset-md-4">
                     Generate Otp <i class="fas fa-key" aria-hidden="true"></i>
                 </button>
 
             </div>
 
             <div class="form-group col-12 row">
-                <label for="otp" class="col-md-2"></label>
-                <input type="text" id="otp" class="form-control col-md-5" aria-describedby="otphelp" placeholder="Enter Otp">
+
+                <input type="text" id="otp" class="form-control col-md-5 col-8 ml-4" aria-describedby="otphelp" placeholder="Enter Otp">
                 <small id="otphelp" class="text-muted col-md-3"></small>
 
 
 
             </div>
             <div class="form-group col-12 row">
-                <button class="btn btn-danger offset-md-5 offset-4" disabled>
+                <button class="btn resent offset-md-2 offset-4 offset-md-4" disabled>
                     Resend Otp <i class="fas fa-redo" aria-hidden="true"></i>
                 </button>
 
             </div>
             <div class="form-group col-12 row">
-                <label for="pass" class="col-md-2"><i class="fas fa-unlock" aria-hidden="true"></i></label>
-                <input type="password" id="pass" class="form-control col-md-5" placeholder="password" aria-describedby="passhelp">
-                <small id="passhelp" class="text-muted col-md-4">Help text</small>
+                <i class="fas fa-unlock p-2" aria-hidden="true"></i>
+                <input type="password" id="pass" class="form-control col-10 col-sm-8" placeholder="password" aria-describedby="passhelp">
+                <small id="passhelp" class="text-muted col-12 col-sm-3">Help text</small>
             </div>
             <div class="form-group col-12 row">
-                <label for="conpass" class="col-md-2"><i class="fas fa-lock" aria-hidden="true"></i></label>
-                <input type="text" id="conpass" class="form-control col-md-5" placeholder="Confirm password" aria-describedby="conpasshelp">
-                <small id="conpasshelp" class="text-muted col-md-4">Help text</small>
+                <i class="fas fa-lock p-2" aria-hidden="true"></i>
+                <input type="text" id="conpass" class="form-control col-sm-8 col-10" placeholder="Confirm password" aria-describedby="conpasshelp">
+                <small id="conpasshelp" class="text-muted col-12 col-sm-3">Help text</small>
             </div>
             <div class="form-group col-12">
                 <button class="btn btn-success text-light">
@@ -309,7 +308,7 @@
                 <!--Copyright-->
                 <p class="text-center text-md-left">© 2020 Copyright:
                     <a href="https://mdbootstrap.com/">
-                        <strong> Mobileinfo.com</strong>
+                        <strong> M-Bucket.com</strong>
                     </a>
                 </p>
                 <!-- Grid column -->

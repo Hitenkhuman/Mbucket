@@ -39,11 +39,8 @@ hr {
   border: none;
 }
 
-.scrolling-wrapper {
-  overflow-x: auto;
+.resent {
+  background-color: #F64C72;
+  color: white;
 }
-
-.scrolling-wrapper::-webkit-scrollbar {
-  width: 0;
-}
-/*# sourceMappingURL=home.css.map */
+/*# sourceMappingURL=signin.css.map */
