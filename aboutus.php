@@ -39,7 +39,7 @@
 
             <div class="col-2 col-md-1 order-1 order-md-11">
 
-                <a href="signin.php" style="color: white;">
+                <a href="signin.php" style="color: white;" data-toggle="tooltip" data-placement="bottom" title="Sign in">
                     <span class="fas fa-user-plus"> &nbsp;</span>
                 </a>
 
@@ -79,7 +79,7 @@
                     <a class="nav-link current" href="aboutus.php">About US</a>
                 </li>
                 <li class="nav-item pl-5">
-                    <a class="nav-link" href="#">Contact</a>
+                    <a class="nav-link" href="contactus.php">Contact Us</a>
                 </li>
 
             </ul>
@@ -141,7 +141,9 @@
 
     <div class="main">
         <div class="container">
-            <h1 class="text-primary display-4">About Us</h1>
+            <div class="row">
+                <img src="./images/aboutus.png" alt="contactus">
+            </div>
             <div class="row">
 
                 <div class="content col-md-8 col-12 order-2 order-md-1">
@@ -179,7 +181,9 @@
                 <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mt-3">
                     <h6 class="text-uppercase mb-4 font-weight-bold">About us</h6>
                     <hr>
-                    <p>Here you can use rows and columns to organize your footer content. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                    <p> In current situation is that finding best suitable mobile for us is vary difficult.
+                        so we give all information like price, camera, processer, and many information that will help you to find best mobile for you.
+                    </p>
                 </div>
                 <!-- Grid column -->
 

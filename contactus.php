@@ -6,10 +6,9 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/4dedb1023f.js" crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
-        Sign in</title>
-    <link rel="stylesheet" href="./css/signin.css">
+    <title>Contact Us</title>
     <link rel="icon" href="./images/logo.png" type="image/png">
+    <link rel="stylesheet" href="./css/contactus.css">
 </head>
 
 <body>
@@ -38,9 +37,9 @@
 
             <div class="col-2 col-md-1 order-1 order-md-11">
 
-                <!-- <a href="signin.php" style="color: white;">
+                <a href="signin.php" style="color: white;" data-toggle="tooltip" data-placement="bottom" title="Sign in">
                     <span class="fas fa-user-plus"> &nbsp;</span>
-                </a> -->
+                </a>
 
             </div>
             <div class="col-2 col-md-1 order-2 order-md-12">
@@ -63,22 +62,22 @@
         <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item pl-5">
-                    <a class="nav-link" href="index.php">Home<span class="sr-only">(current)</span></a>
+                    <a class="nav-link  " href="index.php">Home<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item pl-5">
-                    <a class="nav-link" href="#">Mobiles</a>
+                    <a class="nav-link" href="mobiles.php">Mobiles</a>
                 </li>
                 <li class="nav-item pl-5">
-                    <a class="nav-link" href="#">Compare</a>
+                    <a class="nav-link" href="compare.php">Compare</a>
                 </li>
                 <li class="nav-item pl-5">
-                    <a class="nav-link" href="#">Price-Search</a>
+                    <a class="nav-link" href="priceserch.php">Price-Search</a>
                 </li>
                 <li class="nav-item pl-5">
                     <a class="nav-link" href="aboutus.php">About US</a>
                 </li>
                 <li class="nav-item pl-5">
-                    <a class="nav-link" href="contactus.php">Contact Us</a>
+                    <a class="nav-link current" href="contactus.php">Contact Us</a>
                 </li>
 
             </ul>
@@ -87,6 +86,8 @@
 
 
     </nav>
+
+
     <div id="loginModal" class="modal fade" role="dialog">
         <div class="modal-dialog modal-md modal-dialog-centered" role="content">
             <!-- Modal content-->
@@ -136,76 +137,101 @@
         </div>
     </div>
 
-    <br>
-    <h1>Sign in</h1>
+
+
 
     <div class="container">
-        <form class="form row">
-            <div class="form-group col-12 row">
-                <i class="fas fa-user p-2" aria-hidden="true"></i>
-                <input type="email" class="form-control col-10 col-sm-8" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email id">
-                <small id="emailHelp" class="form-text text-muted col-12 col-sm-3">We'll never share your email with anyone else.</small>
-            </div>
-            <div class="form-group col-12 row">
-                <i class="fas fa-mobile p-2" aria-hidden="true"></i>
-                <input type="text" class="form-control col-10 col-sm-8" id="mobile" aria-describedby="mobileHelp" placeholder="Mobile Number">
-                <small id="mobileHelp" class="form-text text-muted col-12 col-sm-3">We'll never share your mobile with anyone else.</small>
-            </div>
-            <div class="form-group col-12 row">
-                <button class="btn btn-primary offset-md-2 offset-4 offset-md-4">
-                    Generate Otp <i class="fas fa-key" aria-hidden="true"></i>
-                </button>
-
-            </div>
-
-            <div class="form-group col-12 row">
-
-                <input type="text" id="otp" class="form-control col-md-5 col-8 ml-4" aria-describedby="otphelp" placeholder="Enter Otp">
-                <small id="otphelp" class="text-muted col-md-3"></small>
-
-
-
-            </div>
-            <div class="form-group col-12 row">
-                <button class="btn resent offset-md-2 offset-4 offset-md-4" disabled>
-                    Resend Otp <i class="fas fa-redo" aria-hidden="true"></i>
-                </button>
-
-            </div>
-            <div class="form-group col-12 row">
-                <i class="fas fa-unlock p-2" aria-hidden="true"></i>
-                <input type="password" id="pass" class="form-control col-10 col-sm-8" placeholder="password" aria-describedby="passhelp">
-                <small id="passhelp" class="text-muted col-12 col-sm-3">Help text</small>
-            </div>
-            <div class="form-group col-12 row">
-                <i class="fas fa-lock p-2" aria-hidden="true"></i>
-                <input type="text" id="conpass" class="form-control col-sm-8 col-10" placeholder="Confirm password" aria-describedby="conpasshelp">
-                <small id="conpasshelp" class="text-muted col-12 col-sm-3">Help text</small>
-            </div>
-            <div class="form-group col-12">
-                <button class="btn btn-success text-light">
-                    Sign in <i class="fas fa-sign-in-alt" aria-hidden="true"></i>
-                </button>
+        <div class="row p-3 p-sm-1 w-auto">
+            <img src="./images/contactus.png" alt="contactus">
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-4">
+                <h3>Address & Location</h3>
+                <hr class="black">
+                <div>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3691.474417774754!2d73.19495201490594!3d22.297890685324823!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395fc5f65bc2a7e5%3A0x2082411428b284bf!2sFaculty%20of%20Technology%20and%20Engineering%2C%20Maharaja%20Sayajirao%20University%20of%20Baroda!5e0!3m2!1sen!2sin!4v1600341726363!5m2!1sen!2sin" width="90%" height="auto" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe> </div>
+                <address class="font-weight-bold">
+                    <p><i class="fas fa-address-card p-2" aria-hidden="true"></i> M-bucket</p>
+                    <p>
+                        <i class="fas fa-map-marker-alt p-2" aria-hidden="true"></i>
+                        Faculty Of Technology & Engineering,<br>MSU Baroda</p>
+                    <p> <i class="fas fa-thumbtack p-2" aria-hidden="true"></i>Kalabhavan,Near Badambdi Baug</p>
+                    <p><i class="fas fa-city p-2"></i>Baroda 390001,Gujarat,India</p>
+                </address>
             </div>
 
+            <div class="col-12 col-md-4">
+                <h3>write to us</h3>
+                <hr class="black">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" name="name" id="name" class="form-control" data-toggle="tooltip" data-placement="right" title="Enter Name">
 
-        </form>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" class="form-control" data-toggle="tooltip" data-placement="right" title="Enter Email">
+
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" name="phone" id="phone" class="form-control" data-toggle="tooltip" data-placement="right" title="Enter Phone Number">
+
+                </div>
+
+                <div class="form-group">
+                    <label for="sugest">Suggestions</label>
+                    <textarea name="" id="sugest" cols="45" rows="4" class="form-control" data-toggle="tooltip" data-placement="right" title="Suggestions"></textarea>
+
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-primary" type="submit">Submit</button>
+                </div>
+            </div>
+            <div class="col-12 col-md-4">
+                <h3>Contact Us</h3>
+                <hr class="black">
+                <p class="font-weight-bold">M-bucket Customer Care</p>
+                <p><i class="fas fa-envelope" aria-hidden="true"></i> support@M-bucket.com</p>
+                <p>You can reach us at support@M-bucket.com with all queries. We do not have a M-bucket customer care number.</p>
+                <p class="text-danger">If you receive an e-mail, a call from a person/association claiming to be from M-bucket seeking sensitive confidential information like debit/credit card PIN, net-banking or mobile banking password, we request you to never provide such confidential and personal data. We M-bucket never ask for such confidential and personal data.</p>
+                <br>
+                <h3>Follow us</h3>
+                <hr class="black">
+                <div class="text-center ">
+                    <ul class="list-unstyled list-inline">
+                        <li class="list-inline-item">
+                            <a class="btn-floating btn-sm rgba-white-slight mx-1">
+                                <i class="fab fa-facebook-f social-icon"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a class="btn-floating btn-sm rgba-white-slight mx-1">
+                                <i class="fab fa-twitter social-icon"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a class="btn-floating btn-sm rgba-white-slight mx-1">
+                                <i class="fab fa-google-plus-g social-icon"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a class="btn-floating btn-sm rgba-white-slight mx-1">
+                                <i class="fab fa-linkedin-in social-icon"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a class="btn-floating btn-sm rgba-white-slight mx-1">
+                                <i class="fab fa-instagram social-icon"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
 
 
+        </div>
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -229,8 +255,10 @@
                 <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mt-3">
                     <h6 class="text-uppercase mb-4 font-weight-bold">About us</h6>
                     <hr>
-                    <p> In current situation is that finding best suitable mobile for us is vary difficult.
+                    <p>
+                        In current situation is that finding best suitable mobile for us is vary difficult.
                         so we give all information like price, camera, processer, and many information that will help you to find best mobile for you.
+
                     </p>
                 </div>
                 <!-- Grid column -->
@@ -322,7 +350,7 @@
                 <!--Copyright-->
                 <p class="text-center text-md-left">© 2020 Copyright:
                     <a href="https://mdbootstrap.com/">
-                        <strong> M-Bucket.com</strong>
+                        <strong> M-bucket.com</strong>
                     </a>
                 </p>
                 <!-- Grid column -->
