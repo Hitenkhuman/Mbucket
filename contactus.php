@@ -141,8 +141,8 @@
 
 
     <div class="container">
-        <div class="row p-3 p-sm-1 w-auto">
-            <img src="./images/contactus.png" alt="contactus">
+        <div class="row p-3 p-sm-1">
+            <img src="./images/contactus.png" alt="contactus" width="100%">
         </div>
         <div class="row">
             <div class="col-12 col-md-4">
