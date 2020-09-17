@@ -27,7 +27,7 @@
           <img src="./images/logo.png" alt="logo" class="img-responsive pl-3">
         </a>
       </div>
-      <div class="col-12 col-md-8  order-12 order-md-1">
+      <div class="col-12 col-md-8  order-12 order-md-1 pt-3">
         <form class="form-inline">
           <input class="form-control mr-sm-2 w-75 ml-3 mr-2" type="search" placeholder="Search" aria-label="Search">
           <a href="">

@@ -28,7 +28,7 @@
                     <img src="./images/logo.png" alt="logo" class="img-responsive pl-3">
                 </a>
             </div>
-            <div class="col-12 col-md-8  order-12 order-md-1">
+            <div class="col-12 col-md-8  order-12 order-md-1 pt-3">
                 <form class="form-inline">
                     <input class="form-control mr-sm-2 w-75 ml-3 mr-2" type="search" placeholder="Search" aria-label="Search">
                     <a href="">
@@ -141,9 +141,9 @@
 
     <div class="main">
         <div class="container">
-            <div class="row">
-                <img src="./images/aboutus.png" alt="contactus">
-            </div>
+        <div class="row p-3 p-sm-1">
+            <img src="./images/aboutus.png" alt="contactus" width="100%">
+        </div>
             <div class="row">
 
                 <div class="content col-md-8 col-12 order-2 order-md-1">
