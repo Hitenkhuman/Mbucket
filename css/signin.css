@@ -43,4 +43,14 @@ hr {
   background-color: #F64C72;
   color: white;
 }
+
+#spinner {
+  color: #242582;
+  margin-left: 48%;
+  position: fixed;
+  z-index: 100;
+  margin-top: 20vh;
+  display: none;
+  opacity: 1;
+}
 /*# sourceMappingURL=signin.css.map */

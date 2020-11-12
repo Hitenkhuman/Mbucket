@@ -138,52 +138,66 @@
 
     <br>
     <h1>Sign in</h1>
-
+    <div class="spinner-grow" id="spinner" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
     <div class="container">
-        <form class="form row">
+        <form class="form row" method="POST">
             <div class="form-group col-12 row">
                 <i class="fas fa-user p-2" aria-hidden="true"></i>
-                <input type="email" class="form-control col-10 col-sm-8" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email id">
+                <input type="email" class="form-control col-10 col-sm-8" id="useremail" aria-describedby="emailHelp" placeholder="Email id" name="useremail">
                 <small id="emailHelp" class="form-text text-muted col-12 col-sm-3">We'll never share your email with anyone else.</small>
             </div>
             <div class="form-group col-12 row">
                 <i class="fas fa-mobile p-2" aria-hidden="true"></i>
-                <input type="text" class="form-control col-10 col-sm-8" id="mobile" aria-describedby="mobileHelp" placeholder="Mobile Number">
+                <input type="text" class="form-control col-10 col-sm-8" id="usermobile" aria-describedby="mobileHelp" placeholder="Mobile Number" name="usermobile">
                 <small id="mobileHelp" class="form-text text-muted col-12 col-sm-3">We'll never share your mobile with anyone else.</small>
             </div>
             <div class="form-group col-12 row">
-                <button class="btn btn-primary offset-md-2 offset-4 offset-md-4">
+                <button class="btn btn-primary offset-md-2 offset-4 offset-md-4" id="otpgen">
                     Generate Otp <i class="fas fa-key" aria-hidden="true"></i>
                 </button>
 
             </div>
 
             <div class="form-group col-12 row">
+                <div class="col-11 col-md-5">
+                    <input type="text" id="otp" class="form-control  ml-4" aria-describedby="otphelp" placeholder="Enter Otp">
+                    <small id="otphelp" class="text-muted col-md-3">otp</small>
+                </div>
 
-                <input type="text" id="otp" class="form-control col-md-5 col-8 ml-4" aria-describedby="otphelp" placeholder="Enter Otp">
-                <small id="otphelp" class="text-muted col-md-3"></small>
 
+                <div class="form-group col-11 col-md-3">
+                    <button class="btn resent offset-md-2 offset-4" disabled id="otpres">
+                        Resend Otp <i class="fas fa-redo" aria-hidden="true"></i>
+                    </button>
 
+                </div>
+                <div class="col-1 col-md-2" id="clock">
+                    <span id="timer"></span>
+                    <div><small>OTP valid for 1 minute only...</small></div>
+                </div>
 
             </div>
+
             <div class="form-group col-12 row">
-                <button class="btn resent offset-md-2 offset-4 offset-md-4" disabled>
-                    Resend Otp <i class="fas fa-redo" aria-hidden="true"></i>
+                <button class="btn btn-success offset-md-2 offset-4 offset-md-4" id="otpver">
+                    Verify Otp <i class="fas fa-redo" aria-hidden="true"></i>
                 </button>
 
             </div>
             <div class="form-group col-12 row">
                 <i class="fas fa-unlock p-2" aria-hidden="true"></i>
-                <input type="password" id="pass" class="form-control col-10 col-sm-8" placeholder="password" aria-describedby="passhelp">
+                <input type="password" id="userpass" class="form-control col-10 col-sm-8" placeholder="password" aria-describedby="passhelp" name="userpass">
                 <small id="passhelp" class="text-muted col-12 col-sm-3">Help text</small>
             </div>
             <div class="form-group col-12 row">
                 <i class="fas fa-lock p-2" aria-hidden="true"></i>
-                <input type="text" id="conpass" class="form-control col-sm-8 col-10" placeholder="Confirm password" aria-describedby="conpasshelp">
+                <input type="text" id="confirmpass" class="form-control col-sm-8 col-10" placeholder="Confirm password" aria-describedby="conpasshelp">
                 <small id="conpasshelp" class="text-muted col-12 col-sm-3">Help text</small>
             </div>
             <div class="form-group col-12">
-                <button class="btn btn-success text-light">
+                <button class="btn btn-success text-light" disabled id="signin">
                     Sign in <i class="fas fa-sign-in-alt" aria-hidden="true"></i>
                 </button>
             </div>
@@ -337,9 +351,12 @@
 
     </footer>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="./js/signin.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
 </body>
 
 

@@ -101,20 +101,20 @@
           <form>
             <div class="form-row">
               <div class="form-group col-11 row">
-                <label class="sr-only" for="exampleInputEmail3">Email address</label>
+                <label class="sr-only" for="loginemail">Email address</label>
                 <i class="fas fa-user p-2" aria-hidden="true"></i>
-                <input type="email" class="form-control col-10 form-control-sm mr-1" id="exampleInputEmail3" placeholder="Enter email">
+                <input type="email" class="form-control col-10 form-control-sm mr-1" id="loginemail" placeholder="Enter email" required>
               </div>
               <div class="form-group col-11 row">
-                <label class="sr-only" for="exampleInputPassword3">Password</label>
+                <label class="sr-only" for="loginpass">Password</label>
                 <i class="fas fa-lock p-2" aria-hidden="true"></i>
-                <input type="password" class="form-control col-10 form-control-sm mr-1" id="exampleInputPassword3" placeholder="Password">
+                <input type="password" class="form-control col-10 form-control-sm mr-1" id="loginpass" placeholder="Password" required>
               </div>
               <div class="form-group col-11 row">
-                <label class="sr-only" for="exampleInputPassword3">Capta</label>
-                <span class="bg-secondary col-10 col-sm-5">fjvbfj</span>
-                <i class="fas fa-sync p-2" aria-hidden="true"></i>
-                <input type="text" class="form-control col-10 col-sm-5 form-control-sm mr-1" id="exampleInputcapta3" placeholder="capta">
+                <label class="sr-only" for="exampleInputPassword3">Captcha</label>
+                <span class="bg-secondary col-10 col-sm-5" id="captcha"></span>
+                <i class="fas fa-sync p-2" aria-hidden="true" id="refresh"></i>
+                <input type="text" class="form-control col-10 col-sm-5 form-control-sm mr-1" id="usercap" placeholder="capta">
               </div>
 
 
@@ -128,7 +128,7 @@
               </div>
             </div>
             <div class="form-row">
-              <button type="submit" class="btn btn-primary btn-sm m-2">Log in</button>
+              <button type="submit" class="btn btn-primary btn-sm m-2" id="login">Log in</button>
               <button type="button" class="btn btn-secondary btn-sm m-2" data-dismiss="modal">Cancel</button>
 
             </div>
@@ -448,7 +448,9 @@
     <!-- Footer Links -->
 
   </footer>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
+  <script src="./js/loginall.js"></script>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>

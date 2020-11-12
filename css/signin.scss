@@ -4,3 +4,12 @@
   background-color: $buttn;
   color: white;
 }
+#spinner {
+  color: #242582;
+  margin-left: 48%;
+  position: fixed;
+  z-index: 100;
+  margin-top: 20vh;
+  display: none;
+  opacity: 1;
+}
