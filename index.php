@@ -66,7 +66,7 @@
           <a class="nav-link current " href="index.php">Home<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item pl-5">
-          <a class="nav-link" href="#">Mobiles</a>
+          <a class="nav-link" href="mobiles.php">Mobiles</a>
         </li>
         <li class="nav-item pl-5">
           <a class="nav-link" href="#">Compare</a>
@@ -433,7 +433,7 @@
 
         <!--Copyright-->
         <p class="text-center text-md-left">© 2020 Copyright:
-          <a href="https://mdbootstrap.com/">
+          <a href="index.php">
             <strong> M-bucket.com</strong>
           </a>
         </p>

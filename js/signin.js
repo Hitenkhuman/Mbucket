@@ -20,7 +20,7 @@ $(function($){
                     },
                     beforeSend:function(){
                       $('#spinner').show();
-                      $('body').css("opacity","0.5");
+                      
                       
                     },
                     success: function(data) {
@@ -29,8 +29,8 @@ $(function($){
                      else
                      {
                      otp=data;
+                     alert('otp sent');
                      $('#spinner').hide();
-                     $('body').css("opacity","1");
                      $('#otpgen').slideUp(1000);
                      $('#otpres').attr('disabled',false);
                      count=60;
@@ -63,8 +63,8 @@ $(function($){
                     'mobile':mobile
                     },
                     beforeSend:function(){
-                      $('#spinner').show();
-                      $('body').css("opacity","0.5");
+                      $('#spinner1').show();
+                      
                       
                     },
                     success: function(data) {
@@ -72,8 +72,8 @@ $(function($){
                        alert("otp not sent")
                      else{
                      otp=data;
-                     $('#spinner').hide();
-                     $('body').css("opacity","1");
+                     $('#spinner1').hide();
+                     alert('otp resent');
                      count=60;
                      tt=setInterval(timer,1000);
                      }

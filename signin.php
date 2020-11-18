@@ -138,9 +138,8 @@
 
     <br>
     <h1>Sign in</h1>
-    <div class="spinner-grow" id="spinner" role="status">
-        <span class="sr-only">Loading...</span>
-    </div>
+
+
     <div class="container">
         <form class="form row" method="POST">
             <div class="form-group col-12 row">
@@ -149,31 +148,42 @@
                 <small id="emailHelp" class="form-text text-muted col-12 col-sm-3">We'll never share your email with anyone else.</small>
             </div>
             <div class="form-group col-12 row">
-                <i class="fas fa-mobile p-2" aria-hidden="true"></i>
+                <i class="fas fa-mobile p-2 " aria-hidden="true"></i>&nbsp;
                 <input type="text" class="form-control col-10 col-sm-8" id="usermobile" aria-describedby="mobileHelp" placeholder="Mobile Number" name="usermobile">
                 <small id="mobileHelp" class="form-text text-muted col-12 col-sm-3">We'll never share your mobile with anyone else.</small>
             </div>
             <div class="form-group col-12 row">
-                <button class="btn btn-primary offset-md-2 offset-4 offset-md-4" id="otpgen">
+
+                <button class="btn btn-primary offset-md-2 offset-3 offset-md-4" id="otpgen">
+
                     Generate Otp <i class="fas fa-key" aria-hidden="true"></i>
                 </button>
+                <div class="spinner-border ml-2" id="spinner" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
 
             </div>
 
             <div class="form-group col-12 row">
-                <div class="col-11 col-md-5">
-                    <input type="text" id="otp" class="form-control  ml-4" aria-describedby="otphelp" placeholder="Enter Otp">
-                    <small id="otphelp" class="text-muted col-md-3">otp</small>
+                <b class="pt-1">M-</b>
+                <div class="col-12 col-md-5">
+
+                    <input type="text" id="otp" class="form-control" aria-describedby="otphelp" placeholder="Enter OTP">
+                    <small id="otphelp" class="text-muted col-md-3">otp help</small>
                 </div>
 
 
-                <div class="form-group col-11 col-md-3">
-                    <button class="btn resent offset-md-2 offset-4" disabled id="otpres">
-                        Resend Otp <i class="fas fa-redo" aria-hidden="true"></i>
+                <div class="form-group col-12 col-md-3">
+
+                    <button class="btn resent offset-md-1 offset-3 mb-3" disabled id="otpres">
+                        Resend OTP <i class="fas fa-redo" aria-hidden="true"></i>
                     </button>
+                    <div class="spinner-border ml-2 mt-1" id="spinner1" role="status">
+                        <span class="sr-only">Loading...</span>
+                    </div>
 
                 </div>
-                <div class="col-1 col-md-2" id="clock">
+                <div class="col-12 col-md-2" id="clock">
                     <span id="timer"></span>
                     <div><small>OTP valid for 1 minute only...</small></div>
                 </div>
@@ -182,7 +192,7 @@
 
             <div class="form-group col-12 row">
                 <button class="btn btn-success offset-md-2 offset-4 offset-md-4" id="otpver">
-                    Verify Otp <i class="fas fa-redo" aria-hidden="true"></i>
+                    Verify OTP <i class="fas fa-redo" aria-hidden="true"></i>
                 </button>
 
             </div>
@@ -335,7 +345,7 @@
 
                 <!--Copyright-->
                 <p class="text-center text-md-left">© 2020 Copyright:
-                    <a href="https://mdbootstrap.com/">
+                    <a href="index.php">
                         <strong> M-Bucket.com</strong>
                     </a>
                 </p>

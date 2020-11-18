@@ -141,9 +141,9 @@
 
     <div class="main">
         <div class="container">
-        <div class="row p-3 p-sm-1">
-            <img src="./images/aboutus.png" alt="contactus" width="100%">
-        </div>
+            <div class="row p-3 p-sm-1">
+                <img src="./images/aboutus.png" alt="contactus" width="100%">
+            </div>
             <div class="row">
 
                 <div class="content col-md-8 col-12 order-2 order-md-1">
@@ -273,7 +273,7 @@
 
                 <!--Copyright-->
                 <p class="text-center text-md-left">© 2020 Copyright:
-                    <a href="https://mdbootstrap.com/">
+                    <a href="index.php">
                         <strong> M-bucket.com</strong>
                     </a>
                 </p>

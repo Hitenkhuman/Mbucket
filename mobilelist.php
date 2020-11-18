@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
     <link rel="icon" href="./images/logo.png" type="image/png">
-    <link rel="stylesheet" href="./css/.css">
+    <link rel="stylesheet" href="./css/mobilelist.css">
 </head>
 
 <body>
@@ -137,7 +140,52 @@
         </div>
     </div>
 
+    <div class="main">
+        <div class="container">
+            <?php
 
+            try {
+                require_once "pdo.php";
+                if (isset($_GET['id'])) {
+                    $stmt = $pdo->prepare("SELECT *from models WHERE brand_id=:id");
+                    $stmt->execute(array(':id' => $_GET['id']));
+                    $row = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                    foreach ($row as $key => $value) {
+                        $mobimg = $value['mobile_image'];
+                        $modelid = $value['model_id'];
+                        $stmt = $pdo->prepare("SELECT * FROM brands INNER JOIN models ON brands.brand_id=models.brand_id JOIN mobiles ON models.model_id=mobiles.model_id WHERE mobile_id=:id");
+                        $stmt->execute(array(':id' => $modelid));
+                        $row1 = $stmt->fetch(PDO::FETCH_ASSOC);
+                        echo ' <div class="row">';
+                        echo '<div class="col-12 col-md-5">';
+                        echo ' <img src="./images/' . $mobimg . '.png" alt="mobile image" class="img-fluid">';
+                        echo ' </div>';
+                        echo '<div class="col-12 col-md-7">';
+                        echo ' <div class="pt-md-3">';
+                        echo '<h1>' . $row1["brand_name"] . ' ' . $value["mobile_name"] . '</h1>';
+                        echo '</div>';
+                        echo ' <div class="price">';
+                        echo ' <h2><span> ₹ </span><span>' . $row1["price"] . '</span></h2>';
+                        echo ' </div>';
+                        echo '<div class="rating">';
+                        for ($i = 0; $i < $row1['recommendation']; $i++) {
+                            echo '<span class="fa fa-star checked"></span>';
+                        }
+                        echo '</div>';
+                        echo ' <div class="info">';
+                        echo ' <a href="mobileinfo.php?id=' . $row1['model_id'] . '">Check it</a>';
+                        echo ' </div>';
+                        echo '  </div>';
+                        echo '</div>';
+                    }
+                } else
+                    echo "<h1>No Mobile Found</h1>";
+            } catch (PDOException $error) {
+                echo "ERROR" . $error->getMessage();
+            }
+            ?>
+        </div>
+    </div>
 
 
     <footer class="page-footer font-small text-black">

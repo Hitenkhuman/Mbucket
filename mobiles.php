@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
     <link rel="icon" href="./images/logo.png" type="image/png">
-    <link rel="stylesheet" href="./css/.css">
+    <link rel="stylesheet" href="./css/mobiles.css">
 </head>
 
 <body>
@@ -62,10 +62,10 @@
         <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item pl-5">
-                    <a class="nav-link  " href="index.php">Home<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="index.php">Home<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item pl-5">
-                    <a class="nav-link" href="mobiles.php">Mobiles</a>
+                    <a class="nav-link current" href="mobiles.php">Mobiles</a>
                 </li>
                 <li class="nav-item pl-5">
                     <a class="nav-link" href="compare.php">Compare</a>
@@ -137,7 +137,76 @@
         </div>
     </div>
 
+    <div class="main">
+        <h1>Mobiles</h1>
+        <div class="container">
+            <div class="row">
+                <div class="col-6 col-md-4">
+                    <a href="mobilelist.php?id=2">
+                        <img src="./brandlogo/oneplus.PNG" alt="oneplus" class="img-fluid img-thumbnail">
+                    </a>
+                </div>
+                <div class="col-6 col-md-4">
+                    <a href="mobilelist.php?id=1">
+                        <img src="./brandlogo/samsung.PNG" alt="samsung" class="img-fluid img-thumbnail">
+                    </a>
+                </div>
+                <div class="col-6 col-md-4">
+                    <a href="mobilelist.php?id=6">
+                        <img src="./brandlogo/mi.PNG" alt="mi" class="img-fluid img-thumbnail">
+                    </a>
+                </div>
+                <div class="col-6 col-md-4">
+                    <a href="mobilelist.php?id=4">
+                        <img src="./brandlogo/realme.PNG" alt="realme" class="img-fluid img-thumbnail">
+                    </a>
+                </div>
+                <div class="col-6 col-md-4">
+                    <a href="mobilelist.php?id=3">
+                        <img src="./brandlogo/vivo.PNG" alt="vivo" class="img-fluid img-thumbnail">
+                    </a>
+                </div>
+                <div class="col-6 col-md-4">
+                    <a href="mobilelist.php?id=5">
+                        <img src="./brandlogo/oppo.PNG" alt="oppo" class="img-fluid img-thumbnail">
+                    </a>
+                </div>
+                <div class="col-6 col-md-4">
+                    <a href="mobilelist.php">
+                        <img src="./brandlogo/google.PNG" alt="google" class="img-fluid img-thumbnail">
+                    </a>
+                </div>
+                <div class="col-6 col-md-4">
+                    <a href="mobilelist.php">
+                        <img src="./brandlogo/asus.PNG" alt="asus" class="img-fluid img-thumbnail">
+                    </a>
+                </div>
 
+                <div class="col-6 col-md-4">
+                    <a href="mobilelist.php">
+                        <img src="./brandlogo/apple.PNG" alt="apple" class="img-fluid img-thumbnail">
+                    </a>
+                </div>
+
+                <div class="col-6 col-md-4">
+                    <a href="mobilelist.php">
+                        <img src="./brandlogo/nokia.PNG" alt="nokia" class="img-fluid img-thumbnail">
+                    </a>
+                </div>
+                <div class="col-6 col-md-4">
+                    <a href="mobilelist.php">
+                        <img src="./brandlogo/honor.PNG" alt="honor" class="img-fluid img-thumbnail">
+                    </a>
+                </div>
+
+                <div class="col-6 col-md-4">
+                    <a href="mobilelist.php">
+                        <img src="./brandlogo/motorola.PNG" alt="motorola" class="img-fluid img-thumbnail">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
     <footer class="page-footer font-small text-black">

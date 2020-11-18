@@ -39,18 +39,7 @@ hr {
   border: none;
 }
 
-.resent {
-  background-color: #F64C72;
-  color: white;
+.checked {
+  color: orange;
 }
-
-#spinner {
-  color: blue;
-  display: none;
-}
-
-#spinner1 {
-  color: #f64c72;
-  display: none;
-}
-/*# sourceMappingURL=signin.css.map */
+/*# sourceMappingURL=mobilelist.css.map */
