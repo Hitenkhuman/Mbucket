@@ -1,38 +1,49 @@
-@import "./colors";
 .headernav {
-  background-color: $nav;
+  background-color: #242582;
   color: white;
 }
+
 .navbar {
-  background-color: $background;
+  background-color: #2F2FA2;
 }
 
 .nav-link {
   color: white;
-  &:hover {
-    color: $buttn;
-  }
 }
+
+.nav-link:hover {
+  color: #F64C72;
+}
+
 .current {
   color: yellow;
   font-weight: bold;
 }
 
 footer {
-  background-color: $background;
+  background-color: #2F2FA2;
   color: white;
 }
+
 .footer-link {
   color: yellow;
 }
+
 .social-icon {
   color: yellowgreen;
 }
+
 hr {
   height: 1px;
   background-color: white;
   border: none;
 }
+
 .srbtn {
-  background-color: $background;
+  background-color: #2F2FA2;
 }
+
+.checked {
+  color: orange;
+}
+/*# sourceMappingURL=compare.css.map */

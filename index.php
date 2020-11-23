@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,11 +31,12 @@
         </a>
       </div>
       <div class="col-12 col-md-8  order-12 order-md-1 pt-3">
-        <form class="form-inline">
-          <input class="form-control mr-sm-2 w-75 ml-3 mr-2" type="search" placeholder="Search" aria-label="Search">
-          <a href="">
-            <i class="fas fa-search mr-3" style="color: white;"></i>
-          </a>
+        <form class="form-inline" method="POST" action="livesearch.php">
+          <input class="form-control mr-sm-2 w-75 ml-3 mr-2" type="search" placeholder="Search" aria-label="Search" name="searchtext">
+          <button type="submit" class="btn srbtn">
+            <i class="fas fa-search mr-3" style="color: white;" id="searchbtn"></i>
+          </button>
+
         </form>
       </div>
 
@@ -69,10 +73,10 @@
           <a class="nav-link" href="mobiles.php">Mobiles</a>
         </li>
         <li class="nav-item pl-5">
-          <a class="nav-link" href="#">Compare</a>
+          <a class="nav-link" href="compare.php">Compare</a>
         </li>
         <li class="nav-item pl-5">
-          <a class="nav-link" href="#">Price-Search</a>
+          <a class="nav-link" href="pricesearch.php">Price-Search</a>
         </li>
         <li class="nav-item pl-5">
           <a class="nav-link" href="aboutus.php">About US</a>
@@ -188,50 +192,32 @@
 
   <div class="container-fluid">
     <div class="scrolling-wrapper row flex-row flex-nowrap mt-4 pb-4">
-      <div class="col-9 col-sm-6 col-md-4 col-lg-3 p-3">
-        <div class="card" style="width: 18rem;">
-          <img src="..." class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-          </div>
-        </div>
-      </div>
 
-      <div class="col-9 col-sm-6 col-md-4 col-lg-3 p-3">
-        <div class="card" style="width: 18rem;">
-          <img src="..." class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-          </div>
-        </div>
-      </div>
 
-      <div class="col-9 col-sm-6 col-md-4 col-lg-3 p-3">
-        <div class="card" style="width: 18rem;">
-          <img src="..." class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+      <?php
+      try {
+        require_once 'pdo.php';
+        $stmt = $pdo->prepare("SELECT * FROM brands INNER JOIN models ON brands.brand_id=models.brand_id JOIN mobiles ON models.model_id=mobiles.model_id ORDER BY recommendation DESC LIMIT 10");
+        $stmt->execute();
+        $row = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        foreach ($row as $key => $value) {
+          echo ' <div class="col-9 col-sm-6 col-md-4 col-lg-3 p-3">
+          <div class="card" style="width: 18rem;">
+            <img src="./images/' . $value['mobile_image'] . '.png" class="card-img-top" alt="mobile image">
+            <div class="card-body">
+              <h5 class="card-title">' . $value['brand_name'] . ' ' . $value['mobile_name'] . '</h5>
+              <p class="card-text">Price: ₹' . $value['price'] . '</p>
+              <a href="mobileinfo.php?id=' . $value['model_id'] . '" class="btn btn-primary">Check out</a>
+            </div>
           </div>
-        </div>
-      </div>
+        </div>';
+        }
+      } catch (PDOException $error) {
+        echo "ERROR" . $error->getMessage();
+      }
 
-      <div class="col-9 col-sm-6 col-md-4 col-lg-3 p-3">
-        <div class="card" style="width: 18rem;">
-          <img src="..." class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-          </div>
-        </div>
-      </div>
 
+      ?>
 
 
     </div>
@@ -239,90 +225,33 @@
 
   <div class="container-fluid">
     <div class="scrolling-wrapper row flex-row flex-nowrap mt-4 pb-4">
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3 p-5">
-        <div class="card mb-3" style="max-width: 540px;">
-          <div class="row no-gutters">
-            <div class="col-md-4">
-              <img src="..." class="card-img" alt="...">
-            </div>
-            <div class="col-md-8">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-              </div>
-            </div>
-          </div>
+      <?php
+      try {
+        require_once 'pdo.php';
+        $stmt = $pdo->prepare("SELECT * FROM brands INNER JOIN models ON brands.brand_id=models.brand_id JOIN mobiles ON models.model_id=mobiles.model_id ORDER BY launch_date DESC LIMIT 10");
+        $stmt->execute();
+        $row = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        foreach ($row as $key => $value) {
+          echo '<div class="col-12 col-sm-6 col-md-4 col-lg-3 p-5">
+        <div class="card" style="width: 18rem;">
+        <img class="img-fluid" src="./images/' . $value['mobile_image'] . '.png" alt="mobile image cap">
+        <div class="card-body">
+            <h4 class="text-primary">' . $value['brand_name'] . ' ' . $value['mobile_name'] . '</h4>
+            <p class="card-text">Price :₹ ' . $value['price'] . '/-</p>
+            <a href="mobileinfo.php?id=' . $value['model_id'] . '" class="btn btn-primary">Check out</a>
         </div>
-      </div>
+        </div>
+        </div>';
+        }
+      } catch (PDOException $error) {
+        echo "ERROR" . $error->getMessage();
+      }
 
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3 p-5">
-        <div class="card mb-3" style="max-width: 540px;">
-          <div class="row no-gutters">
-            <div class="col-md-4">
-              <img src="..." class="card-img" alt="...">
-            </div>
-            <div class="col-md-8">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
 
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3 p-5">
-        <div class="card mb-3" style="max-width: 540px;">
-          <div class="row no-gutters">
-            <div class="col-md-4">
-              <img src="..." class="card-img" alt="...">
-            </div>
-            <div class="col-md-8">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      ?>
 
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3 p-5">
-        <div class="card mb-3" style="max-width: 540px;">
-          <div class="row no-gutters">
-            <div class="col-md-4">
-              <img src="..." class="card-img" alt="...">
-            </div>
-            <div class="col-md-8">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
 
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3 p-5">
-        <div class="card mb-3" style="max-width: 540px;">
-          <div class="row no-gutters">
-            <div class="col-md-4">
-              <img src="..." class="card-img" alt="...">
-            </div>
-            <div class="col-md-8">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+
 
     </div>
   </div>

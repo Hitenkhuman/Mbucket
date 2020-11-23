@@ -1,6 +1,22 @@
 var user_id;
 var cap;
 $(function($) {
+  // $('#searchbtn').click(function(e){
+  //   e.preventDefault();
+  //   var st=$("#searchtext").val();
+  //   $.ajax({
+  //     type:'POST',
+  //     url:'livesearch.php',
+  //     data:{
+  //       'searchtext':st;
+  //     },
+  //     success: function(data){
+
+  //     }
+  //   })
+    
+  // });
+
   $('#login').click(function(e) {
     e.preventDefault();
     var email = $("#loginemail").val();
@@ -57,6 +73,9 @@ $(function($) {
     captcha();
     $("#captcha").html(cap);
   });
+
+
+  
 
 
   function captcha(){

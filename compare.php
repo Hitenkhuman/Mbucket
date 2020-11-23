@@ -11,7 +11,7 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
     <link rel="icon" href="./images/logo.png" type="image/png">
-    <link rel="stylesheet" href="./css/mobileinfo.css">
+    <link rel="stylesheet" href="./css/compare.css">
 </head>
 
 <body>
@@ -141,155 +141,65 @@ session_start();
     </div>
 
     <div class="main">
+        <h1>Compare</h1>
         <div class="container">
-            <?php
-            try {
-                require_once "pdo.php";
-                if (isset($_GET['id'])) {
-                    $stmt = $pdo->prepare("SELECT * FROM brands INNER JOIN models ON brands.brand_id=models.brand_id JOIN mobiles ON models.model_id=mobiles.model_id WHERE mobile_id=:id");
-                    $stmt->execute(array(':id' => $_GET['id']));
-                    $row = $stmt->fetch(PDO::FETCH_ASSOC);
-                    echo '<div class="row">';
-                    echo ' <h1>' . $row['brand_name'] . ' ' . $row['mobile_name'] . '</h1>';
-                    echo '</div>';
-                    echo '<div class="row">';
-                    echo '<h3>Some kind of text goes here..</h3>';
-                    echo ' </div>';
-                    echo '<div class="row ">';
-                    echo '<small>some extra text goes here...</small>';
-                    echo '</div>';
-                    echo '<div class="row ratting">';
-                    for ($i = 0; $i < $row['recommendation']; $i++) {
-                        echo '<span class="fa fa-star checked"></span>';
-                    }
-                    $remain = 10 - $row['recommendation'];
-                    for ($i = 0; $i < $remain; $i++) {
-                        echo '<span class="fa fa-star"></span>';
-                    }
-                    echo ' </div>';
-                    echo '<div class="row">';
-                    echo '<div class="col-12 col-md-6">';
-                    echo '<div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">';
-                    echo '<div class="carousel-inner">';
-                    echo ' <div class="carousel-item active">';
-                    echo '<img src="./images/' . $row['mobile_image'] . '.png" class="d-block w-100" alt="mobile image">';
-                    echo '</div>';
-                    echo ' <div class="carousel-item">';
-                    echo '<img src="./images/' . $row['mobile_image'] . 'i.png" class="d-block w-100" alt="mobile image">';
-                    echo '</div>';
-                    echo '<a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
-                    <span class="fa fa-chevron-left" aria-hidden="true" style="color: black;"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
-                    <span class="fa fa-chevron-right" aria-hidden="true" style="color: black;"></span>
-                    <span class="sr-only">Next</span>
-                </a>';
-                    echo '</div>
-                    </div>
-                
-                    </div>';
-                    echo '<div class="col-12 col-md-6">';
-                    echo '<div class="row pt-md-4 pt-2">';
-                    echo '<h1>Key feature</h1>';
-                    echo ' </div>';
-                    echo '<div class="row pt-md-4 pt-2">';
-                    echo '<h3>Price: ₹' . $row['price'] . '/-</h3>';
-                    echo '</div>';
-                    echo ' <div class="row pt-md-4 pt-2">';
-                    echo '<h4>RAM:' . $row['ram'] . ' GB</h4>';
-                    echo ' </div>';
-                    echo '<div class="row pt-md-4 pt-2">';
-                    echo '<h4>Front Camera:' . $row['front_camera'] . ' MP</h4>';
-                    echo '</div>';
-                    echo ' <div class="row pt-md-4 pt-2">';
-                    echo ' <h4>Rear Camera:' . $row['rear_camera'] . ' MP</h4>';
-                    echo ' </div>';
-                    echo '<div class="row pt-md-4 pt-2">';
-                    echo '<h4>Battery:' . $row['battery'] . ' MAh</h4>';
-                    echo ' </div>';
-                    echo '</div>';
-                    echo '<div class="col-12">';
-                    echo '<button class="btn btn-primary">full specification</button>';
-                    echo '</div>';
-                    echo '<div class="col-12 col-md-9">';
-                    echo '<table class="table table-hover table-bordered">
-                    <tbody>
-                        <tr>
-                            <td>Brand</td>
-                            <td>' . $row['brand_name'] . '</td>
-                        </tr>
-                        <tr>
-                            <td>Model</td>
-                            <td>' . $row['mobile_name'] . '</td>
-                        </tr>
-                        <tr>
-                            <td>Processor</td>
-                            <td>' . $row['processor'] . '</td>
-                        </tr>
-                        <tr>
-                            <td>Display</td>
-                            <td>' . $row['display'] . '</td>
-                        </tr>
-                        <tr>
-                            <td>Screen Dimenstion</td>
-                            <td>' . $row['screen_dimenstion'] . '  mm</td>
-                        </tr>
-                        <tr>
-                            <td>Front Camera</td>
-                            <td>' . $row['front_camera'] . '  MP</td>
-                        </tr>
-                        <tr>
-                            <td>Rear Camera</td>
-                            <td>' . $row['rear_camera'] . '  MP</td>
-                        </tr>
-                        <tr>
-                            <td>Ram</td>
-                            <td>' . $row['ram'] . '  GB</td>
-                        </tr>
-                        <tr>
-                            <td>Rom</td>
-                            <td>' . $row['rom'] . '  GB</td>
-                        </tr>
-                        <tr>
-                            <td>Battery</td>
-                            <td>' . $row['battery'] . '  MAh</td>
-                        </tr>
-                        <tr>
-                            <td>Charging</td>
-                            <td>' . $row['charging'] . '</td>
-                        </tr>
-                        <tr>
-                            <td>SIM Support</td>
-                            <td>' . $row['sim'] . '</td>
-                        </tr>
-                        <tr>
-                            <td>Fingerprint</td>
-                            <td>' . $row['fingerprint_sensor'] . '</td>
-                        </tr>
-                        <tr>
-                            <td>weight</td>
-                            <td>' . $row['weight'] . '  grams</td>
-                        </tr>
-                        <tr>
-                            <td>Price</td>
-                            <td>₹' . $row['price'] . '/-</td>
-                        </tr>
-                        <tr>
-                            <td>Launch Date</td>
-                            <td>' . $row['launch_date'] . '</td>
-                        </tr>
-                    </tbody>
-                </table>';
-                } else
-                    echo "<h1>No Mobile Found</h1>";
-            } catch (PDOException $error) {
-                echo "ERROR" . $error->getMessage();
-            }
-            ?>
+            <div class="row">
+                <div class="col-12 col-md-6 form-group">
+                    <label for="brand1">SELECT BRAND 1</label>
+                    <select name="brand1" id="brand1">
+                        <?php
+                        try {
+                            require_once 'pdo.php';
+                            $stmt = $pdo->prepare("SELECT * from brands");
+                            $stmt->execute();
+                            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                                echo '<option value="' . $row['brand_id'] . '">' . $row['brand_name'] . '</option>';
+                            }
+                        } catch (PDOException $error) {
+                            echo $error;
+                        }
+                        ?>
+                    </select>
+                </div>
+                <div class="col-12 col-md-6">
+                    <label for="brand2">SELECT BRAND 2</label>
+                    <select name="brand2" id="brand2">
+                        <?php
+                        try {
+                            require_once 'pdo.php';
+                            $stmt = $pdo->prepare("SELECT *from brands");
+                            $stmt->execute();
+                            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                                echo '<option value="' . $row['brand_id'] . '">' . $row['brand_name'] . '</option>';
+                            }
+                        } catch (PDOException $error) {
+                            echo $error;
+                        }
+                        ?>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-1 offset-4">
+                    <button id="mobsel" class="btn btn-primary">
+                        Next
+                    </button>
+                </div>
+            </div>
+            <div class="row" id="modelcontent">
 
+            </div>
+            <div class="row" id="comparebtn" style="display:none;">
+                <div class="col-12 col-md-1 offset-4">
+                    <button id="compare" class="btn btn-success">
+                        Compare
+                    </button>
+                </div>
+            </div>
+            <div class="row" id="comparetable">
+
+            </div>
         </div>
-    </div>
     </div>
 
 
@@ -414,7 +324,8 @@ session_start();
         <!-- Footer Links -->
 
     </footer>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="./js/compare.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>

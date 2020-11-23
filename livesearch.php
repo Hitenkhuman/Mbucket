@@ -11,7 +11,7 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
     <link rel="icon" href="./images/logo.png" type="image/png">
-    <link rel="stylesheet" href="./css/mobileinfo.css">
+    <link rel="stylesheet" href="./css/livesearch.css">
 </head>
 
 <body>
@@ -140,158 +140,62 @@ session_start();
         </div>
     </div>
 
+
     <div class="main">
         <div class="container">
             <?php
             try {
                 require_once "pdo.php";
-                if (isset($_GET['id'])) {
-                    $stmt = $pdo->prepare("SELECT * FROM brands INNER JOIN models ON brands.brand_id=models.brand_id JOIN mobiles ON models.model_id=mobiles.model_id WHERE mobile_id=:id");
-                    $stmt->execute(array(':id' => $_GET['id']));
-                    $row = $stmt->fetch(PDO::FETCH_ASSOC);
-                    echo '<div class="row">';
-                    echo ' <h1>' . $row['brand_name'] . ' ' . $row['mobile_name'] . '</h1>';
-                    echo '</div>';
-                    echo '<div class="row">';
-                    echo '<h3>Some kind of text goes here..</h3>';
-                    echo ' </div>';
-                    echo '<div class="row ">';
-                    echo '<small>some extra text goes here...</small>';
-                    echo '</div>';
-                    echo '<div class="row ratting">';
-                    for ($i = 0; $i < $row['recommendation']; $i++) {
-                        echo '<span class="fa fa-star checked"></span>';
+                if (isset($_POST['searchtext'])) {
+                    $sql = "SELECT * FROM brands INNER JOIN models ON brands.brand_id=models.brand_id JOIN mobiles ON models.model_id=mobiles.model_id WHERE brand_name LIKE CONCAT('%',:st,'%') OR mobile_name LIKE CONCAT('%',:st,'%') OR price BETWEEN :st-5000 AND :st+5000";
+                    $stmt = $pdo->prepare($sql);
+                    $stmt->execute(array(':st' => strtolower($_POST['searchtext'])));
+                    if ($row = $stmt->fetchAll(PDO::FETCH_ASSOC)) {
+                        echo '<h1>Showing Results for.."' . $_POST['searchtext'] . '"</h1>';
+                        foreach ($row as $key => $value) {
+                            $mobimg = $value['mobile_image'];
+
+                            echo ' <div class="row">';
+                            echo '<div class="col-12 col-md-5">';
+                            echo ' <img src="./images/' . $mobimg . '.png" alt="mobile image" class="img-fluid">';
+                            echo ' </div>';
+                            echo '<div class="col-12 col-md-7">';
+                            echo ' <div class="pt-md-3">';
+                            echo '<h1>' . $value["brand_name"] . ' ' . $value["mobile_name"] . '</h1>';
+                            echo '</div>';
+                            echo ' <div class="price">';
+                            echo ' <h2><span> ₹ </span><span>' . $value["price"] . '</span></h2>';
+                            echo ' </div>';
+                            echo '<div class="rating">';
+                            for ($i = 0; $i < $value['recommendation']; $i++) {
+                                echo '<span class="fa fa-star checked"></span>';
+                            }
+                            $remain = 10 - $value['recommendation'];
+                            for ($i = 0; $i < $remain; $i++) {
+                                echo '<span class="fa fa-star"></span>';
+                            }
+                            echo '</div>';
+                            echo ' <div class="info">';
+                            echo ' <a href="mobileinfo.php?id=' . $value['model_id'] . '">Check it</a>';
+                            echo ' </div>';
+                            echo '  </div>';
+                            echo '</div>';
+                        }
+                    } else {
+                        echo '<h1>OOPS.......</h1>
+                        <h3>No MOBILE FOUND</h3>
+                        <b>SERCH SOMETHING DIFFERENT</b>';
                     }
-                    $remain = 10 - $row['recommendation'];
-                    for ($i = 0; $i < $remain; $i++) {
-                        echo '<span class="fa fa-star"></span>';
-                    }
-                    echo ' </div>';
-                    echo '<div class="row">';
-                    echo '<div class="col-12 col-md-6">';
-                    echo '<div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">';
-                    echo '<div class="carousel-inner">';
-                    echo ' <div class="carousel-item active">';
-                    echo '<img src="./images/' . $row['mobile_image'] . '.png" class="d-block w-100" alt="mobile image">';
-                    echo '</div>';
-                    echo ' <div class="carousel-item">';
-                    echo '<img src="./images/' . $row['mobile_image'] . 'i.png" class="d-block w-100" alt="mobile image">';
-                    echo '</div>';
-                    echo '<a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
-                    <span class="fa fa-chevron-left" aria-hidden="true" style="color: black;"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
-                    <span class="fa fa-chevron-right" aria-hidden="true" style="color: black;"></span>
-                    <span class="sr-only">Next</span>
-                </a>';
-                    echo '</div>
-                    </div>
-                
-                    </div>';
-                    echo '<div class="col-12 col-md-6">';
-                    echo '<div class="row pt-md-4 pt-2">';
-                    echo '<h1>Key feature</h1>';
-                    echo ' </div>';
-                    echo '<div class="row pt-md-4 pt-2">';
-                    echo '<h3>Price: ₹' . $row['price'] . '/-</h3>';
-                    echo '</div>';
-                    echo ' <div class="row pt-md-4 pt-2">';
-                    echo '<h4>RAM:' . $row['ram'] . ' GB</h4>';
-                    echo ' </div>';
-                    echo '<div class="row pt-md-4 pt-2">';
-                    echo '<h4>Front Camera:' . $row['front_camera'] . ' MP</h4>';
-                    echo '</div>';
-                    echo ' <div class="row pt-md-4 pt-2">';
-                    echo ' <h4>Rear Camera:' . $row['rear_camera'] . ' MP</h4>';
-                    echo ' </div>';
-                    echo '<div class="row pt-md-4 pt-2">';
-                    echo '<h4>Battery:' . $row['battery'] . ' MAh</h4>';
-                    echo ' </div>';
-                    echo '</div>';
-                    echo '<div class="col-12">';
-                    echo '<button class="btn btn-primary">full specification</button>';
-                    echo '</div>';
-                    echo '<div class="col-12 col-md-9">';
-                    echo '<table class="table table-hover table-bordered">
-                    <tbody>
-                        <tr>
-                            <td>Brand</td>
-                            <td>' . $row['brand_name'] . '</td>
-                        </tr>
-                        <tr>
-                            <td>Model</td>
-                            <td>' . $row['mobile_name'] . '</td>
-                        </tr>
-                        <tr>
-                            <td>Processor</td>
-                            <td>' . $row['processor'] . '</td>
-                        </tr>
-                        <tr>
-                            <td>Display</td>
-                            <td>' . $row['display'] . '</td>
-                        </tr>
-                        <tr>
-                            <td>Screen Dimenstion</td>
-                            <td>' . $row['screen_dimenstion'] . '  mm</td>
-                        </tr>
-                        <tr>
-                            <td>Front Camera</td>
-                            <td>' . $row['front_camera'] . '  MP</td>
-                        </tr>
-                        <tr>
-                            <td>Rear Camera</td>
-                            <td>' . $row['rear_camera'] . '  MP</td>
-                        </tr>
-                        <tr>
-                            <td>Ram</td>
-                            <td>' . $row['ram'] . '  GB</td>
-                        </tr>
-                        <tr>
-                            <td>Rom</td>
-                            <td>' . $row['rom'] . '  GB</td>
-                        </tr>
-                        <tr>
-                            <td>Battery</td>
-                            <td>' . $row['battery'] . '  MAh</td>
-                        </tr>
-                        <tr>
-                            <td>Charging</td>
-                            <td>' . $row['charging'] . '</td>
-                        </tr>
-                        <tr>
-                            <td>SIM Support</td>
-                            <td>' . $row['sim'] . '</td>
-                        </tr>
-                        <tr>
-                            <td>Fingerprint</td>
-                            <td>' . $row['fingerprint_sensor'] . '</td>
-                        </tr>
-                        <tr>
-                            <td>weight</td>
-                            <td>' . $row['weight'] . '  grams</td>
-                        </tr>
-                        <tr>
-                            <td>Price</td>
-                            <td>₹' . $row['price'] . '/-</td>
-                        </tr>
-                        <tr>
-                            <td>Launch Date</td>
-                            <td>' . $row['launch_date'] . '</td>
-                        </tr>
-                    </tbody>
-                </table>';
-                } else
-                    echo "<h1>No Mobile Found</h1>";
+                }
             } catch (PDOException $error) {
                 echo "ERROR" . $error->getMessage();
             }
-            ?>
 
+
+
+            ?>
         </div>
     </div>
-    </div>
-
 
     <footer class="page-footer font-small text-black">
 
