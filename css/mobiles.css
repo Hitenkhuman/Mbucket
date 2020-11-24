@@ -124,15 +124,14 @@ html {
   -webkit-box-shadow: 5px 5px 10px;
           box-shadow: 5px 5px 10px;
   padding: 20px;
-  -webkit-transition: all 0.6s;
-  -webkit-transition: all 5s;
-  transition: all 5s;
+  -webkit-transition: all 2s;
+  transition: all 2s;
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
 }
 
 .mobbox:hover {
-  -webkit-transform: rotateY(360deg);
-          transform: rotateY(360deg);
+  -webkit-transform: rotateY(50deg);
+          transform: rotateY(50deg);
 }
 /*# sourceMappingURL=mobiles.css.map */
