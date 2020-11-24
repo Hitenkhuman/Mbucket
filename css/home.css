@@ -39,11 +39,138 @@ hr {
   border: none;
 }
 
+.srbtn {
+  background-color: #242582;
+}
+
+body,
+html {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+.social-icon {
+  color: white;
+  border: 2px solid white;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.social-icon:hover {
+  color: yellow;
+  font-weight: bold;
+  border: 2px solid yellow;
+  -webkit-box-shadow: 5px 5px #e2e24d;
+          box-shadow: 5px 5px #e2e24d;
+}
+
+.footer-link {
+  color: white;
+}
+
+.footer-link:hover {
+  color: yellow;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#searchbtn {
+  color: white;
+}
+
+#searchbtn:hover {
+  color: yellow;
+}
+
+.searchbox:hover {
+  border: 3px solid #F64C72;
+}
+
+#captcha {
+  user-select: none;
+  /* supported by Chrome and Opera */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  font-style: italic;
+  color: black;
+  font-size: 20px;
+  background-color: grey;
+}
+
 .scrolling-wrapper {
   overflow-x: auto;
 }
 
 .scrolling-wrapper::-webkit-scrollbar {
   width: 0;
+}
+
+.mobilename {
+  text-transform: capitalize;
+  color: #242582;
+}
+
+.price {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.cobtn {
+  background-color: #242582;
+  color: white;
+}
+
+.cobtn:hover {
+  background-color: white;
+  color: #242582;
+  font-weight: bold;
+  border: 1px solid #242582;
+}
+
+.flip-box {
+  background-color: transparent;
+  width: 300px;
+  height: 200px;
+  border: 1px solid #f1f1f1;
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
+}
+
+.flip-box-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  -webkit-transition: -webkit-transform 0.8s;
+  transition: -webkit-transform 0.8s;
+  transition: transform 0.8s;
+  transition: transform 0.8s, -webkit-transform 0.8s;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+
+.flip-box:hover .flip-box-inner {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+
+.flip-box-front,
+.flip-box-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-box-back {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
 }
 /*# sourceMappingURL=home.css.map */

@@ -4,7 +4,7 @@
 }
 
 .navbar {
-  background-color: #2F2FA2;
+  background-color: #2f2fa2;
 }
 
 .nav-link {
@@ -12,7 +12,7 @@
 }
 
 .nav-link:hover {
-  color: #F64C72;
+  color: #f64c72;
 }
 
 .current {
@@ -21,7 +21,7 @@
 }
 
 footer {
-  background-color: #2F2FA2;
+  background-color: #2f2fa2;
   color: white;
 }
 
@@ -29,13 +29,73 @@ footer {
   color: yellow;
 }
 
-.social-icon {
-  color: yellowgreen;
-}
-
 hr {
   height: 1px;
   background-color: white;
   border: none;
+}
+
+.srbtn {
+  background-color: #242582;
+}
+
+body,
+html {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+.social-icon {
+  color: white;
+  border: 2px solid white;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.social-icon:hover {
+  color: yellow;
+  font-weight: bold;
+  border: 2px solid yellow;
+  -webkit-box-shadow: 5px 5px #e2e24d;
+  box-shadow: 5px 5px #e2e24d;
+}
+
+.footer-link {
+  color: white;
+}
+
+.footer-link:hover {
+  color: yellow;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#searchbtn {
+  color: white;
+}
+
+#searchbtn:hover {
+  color: yellow;
+}
+
+.searchbox:hover {
+  border: 3px solid #f64c72;
+}
+
+#captcha {
+  user-select: none;
+  /* supported by Chrome and Opera */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  font-style: italic;
+  color: black;
+  font-size: 20px;
+  background-color: grey;
 }
 /*# sourceMappingURL=aboutus.css.map */
