@@ -150,12 +150,14 @@ session_start();
     </div>
 
     <div class="main">
-        <h1>Compare</h1>
+        <div class="mt">
+            <h1 class="mh">Compare Mobiles</h1>
+        </div>
         <div class="container">
             <div class="row">
                 <div class="col-12 col-md-6 form-group">
-                    <label for="brand1">SELECT BRAND 1</label>
-                    <select name="brand1" id="brand1">
+                    <label for="brand1" class="bt">Brand 1:</label>
+                    <select name="brand1" id="brand1" class="sbox">
                         <?php
                         try {
                             require_once 'pdo.php';
@@ -171,8 +173,8 @@ session_start();
                     </select>
                 </div>
                 <div class="col-12 col-md-6">
-                    <label for="brand2">SELECT BRAND 2</label>
-                    <select name="brand2" id="brand2">
+                    <label for="brand2" class="bt">Brand 2:</label>
+                    <select name="brand2" id="brand2" class="sbox">
                         <?php
                         try {
                             require_once 'pdo.php';
@@ -205,7 +207,7 @@ session_start();
                     </button>
                 </div>
             </div>
-            <div class="row" id="comparetable">
+            <div class="row pr-5 pr-sm-2" id="comparetable">
 
             </div>
         </div>
@@ -340,7 +342,7 @@ session_start();
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="./js/loginall.js"></script>
     <script src="./js/compare.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 </body>

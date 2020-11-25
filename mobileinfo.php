@@ -166,13 +166,13 @@ session_start();
                     $stmt->execute(array(':id' => $_GET['id']));
                     $row = $stmt->fetch(PDO::FETCH_ASSOC);
                     echo '<div class="row">';
-                    echo ' <h1>' . $row['brand_name'] . ' ' . $row['mobile_name'] . '</h1>';
+                    echo ' <h1 class="mobilename">' . $row['brand_name'] . ' ' . $row['mobile_name'] . '</h1>';
                     echo '</div>';
                     echo '<div class="row">';
-                    echo '<h3>Some kind of text goes here..</h3>';
+                    echo '<h5>' . $row['processor'] . '</h5>';
                     echo ' </div>';
                     echo '<div class="row ">';
-                    echo '<small>some extra text goes here...</small>';
+                    echo '<small>Rattings</small>';
                     echo '</div>';
                     echo '<div class="row ratting">';
                     for ($i = 0; $i < $row['recommendation']; $i++) {
@@ -183,7 +183,7 @@ session_start();
                         echo '<span class="fa fa-star"></span>';
                     }
                     echo ' </div>';
-                    echo '<div class="row">';
+                    echo '<div class="row ml-2 ml-sm-0">';
                     echo '<div class="col-12 col-md-6">';
                     echo '<div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">';
                     echo '<div class="carousel-inner">';
@@ -205,12 +205,12 @@ session_start();
                     </div>
                 
                     </div>';
-                    echo '<div class="col-12 col-md-6">';
+                    echo '<div class="col-12 col-md-6 ml-2 ml-sm-0">';
                     echo '<div class="row pt-md-4 pt-2">';
-                    echo '<h1>Key feature</h1>';
+                    echo '<h1 style="color:white;background:#32CD32;padding:5px;border-radius:5px;">Key features</h1>';
                     echo ' </div>';
                     echo '<div class="row pt-md-4 pt-2">';
-                    echo '<h3>Price: ₹' . $row['price'] . '/-</h3>';
+                    echo '<h3 style="color:red;">Price: ₹' . $row['price'] . '/-</h3>';
                     echo '</div>';
                     echo ' <div class="row pt-md-4 pt-2">';
                     echo '<h4>RAM:' . $row['ram'] . ' GB</h4>';
@@ -226,9 +226,9 @@ session_start();
                     echo ' </div>';
                     echo '</div>';
                     echo '<div class="col-12">';
-                    echo '<button class="btn btn-primary" id="fsbtn">full specification</button>';
+                    echo '<button class="btn btn-primary" id="fsbtn">Full specification</button>';
                     echo '</div>';
-                    echo '<div class="col-12 col-md-9" style="display:none;" id="tabinfo">';
+                    echo '<div class="col-12 col-md-9 mt-5" style="display:none;" id="tabinfo">';
                     echo '<table class="table table-hover table-bordered">
                     <tbody>
                         <tr>
@@ -436,7 +436,7 @@ session_start();
     </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="./js/loginall.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 </body>

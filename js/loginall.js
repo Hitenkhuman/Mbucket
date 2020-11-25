@@ -35,6 +35,7 @@ $(function ($) {
               } else {
                 user_id = data;
                 $("#loginModal .close").click();
+                window.location.assign("index.php?userid=" + user_id + "");
               }
             },
           });
@@ -80,6 +81,7 @@ $(function ($) {
   $(window).on("load", function () {
     captcha();
     $("#captcha").html(cap);
+    //$("#myModal").modal("show");
   });
 
   function varifyemail(email) {

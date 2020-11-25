@@ -170,13 +170,13 @@ session_start();
                         $stmt = $pdo->prepare("SELECT * FROM brands INNER JOIN models ON brands.brand_id=models.brand_id JOIN mobiles ON models.model_id=mobiles.model_id WHERE mobile_id=:id");
                         $stmt->execute(array(':id' => $modelid));
                         $row1 = $stmt->fetch(PDO::FETCH_ASSOC);
-                        echo ' <div class="row">';
+                        echo ' <div class="row mbox m-5">';
                         echo '<div class="col-12 col-md-5">';
                         echo ' <img src="./images/' . $mobimg . '.png" alt="mobile image" class="img-fluid">';
                         echo ' </div>';
                         echo '<div class="col-12 col-md-7">';
                         echo ' <div class="pt-md-3">';
-                        echo '<h1>' . $row1["brand_name"] . ' ' . $value["mobile_name"] . '</h1>';
+                        echo '<h1 class="mobname">' . $row1["brand_name"] . ' ' . $value["mobile_name"] . '</h1>';
                         echo '</div>';
                         echo ' <div class="price">';
                         echo ' <h2><span> ₹ </span><span>' . $row1["price"] . '</span></h2>';
@@ -185,19 +185,31 @@ session_start();
                         for ($i = 0; $i < $row1['recommendation']; $i++) {
                             echo '<span class="fa fa-star checked"></span>';
                         }
+                        $remain = 10 - $row1['recommendation'];
+                        for ($i = 0; $i < $remain; $i++) {
+                            echo '<span class="fa fa-star"></span>';
+                        }
                         echo '</div>';
                         echo ' <div class="info">';
-                        echo ' <a href="mobileinfo.php?id=' . $row1['model_id'] . '&& bid=' . $row1['brand_id'] . '">Check it</a>';
+                        echo ' <a href="mobileinfo.php?id=' . $row1['model_id'] . '&& bid=' . $row1['brand_id'] . '" class="ckitbtn btn mt-3">Check it</a>';
                         echo ' </div>';
                         echo '  </div>';
                         echo '</div>';
                     }
                 } else
-                    echo "<h1>No Mobile Found</h1>";
+                    echo '<div class="">
+                 <div class="main1">
+                     <h1 style="font-size: 70px;color:red;">Oops....</h1>
+                     <h1 style="font-size: 50px;color:blue;">Mobile Not Found</h1>
+                     <p>We will add it as soon as possible...<br />try another mobile?</p>
+                     <a class="fbtn btn" href="mobiles.php">Go back</a>
+                 </div>
+             </div>';
             } catch (PDOException $error) {
                 echo "ERROR" . $error->getMessage();
             }
             ?>
+
         </div>
     </div>
 
@@ -329,7 +341,7 @@ session_start();
     </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="./js/loginall.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 </body>

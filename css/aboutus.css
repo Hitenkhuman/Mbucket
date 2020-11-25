@@ -4,7 +4,7 @@
 }
 
 .navbar {
-  background-color: #2f2fa2;
+  background-color: #2F2FA2;
 }
 
 .nav-link {
@@ -12,7 +12,7 @@
 }
 
 .nav-link:hover {
-  color: #f64c72;
+  color: #F64C72;
 }
 
 .current {
@@ -21,12 +21,16 @@
 }
 
 footer {
-  background-color: #2f2fa2;
+  background-color: #2F2FA2;
   color: white;
 }
 
 .footer-link {
   color: yellow;
+}
+
+.social-icon {
+  color: yellowgreen;
 }
 
 hr {
@@ -42,7 +46,9 @@ hr {
 body,
 html {
   overflow-x: hidden;
-  max-width: 100%;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
 }
 
 .social-icon {
@@ -57,7 +63,7 @@ html {
   font-weight: bold;
   border: 2px solid yellow;
   -webkit-box-shadow: 5px 5px #e2e24d;
-  box-shadow: 5px 5px #e2e24d;
+          box-shadow: 5px 5px #e2e24d;
 }
 
 .footer-link {
@@ -79,7 +85,7 @@ html {
 }
 
 .searchbox:hover {
-  border: 3px solid #f64c72;
+  border: 3px solid #F64C72;
 }
 
 #captcha {

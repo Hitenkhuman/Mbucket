@@ -46,7 +46,9 @@ hr {
 body,
 html {
   overflow-x: hidden;
-  max-width: 100%;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
 }
 
 .social-icon {
@@ -105,5 +107,70 @@ html {
 
 .checked {
   color: orange;
+}
+
+.main1 {
+  text-align: center;
+  z-index: 5;
+}
+
+.fbtn {
+  background: -webkit-gradient(linear, left top, left bottom, from(#ec5dc1), to(#d61a6f));
+  background: linear-gradient(#ec5dc1, #d61a6f);
+  padding: 0 12px;
+  border: none;
+  border-radius: 20px;
+  -webkit-box-shadow: 0 30px 15px rgba(0, 0, 0, 0.15);
+          box-shadow: 0 30px 15px rgba(0, 0, 0, 0.15);
+  outline: none;
+  color: #fff;
+  font: 400 16px/2.5 Nunito, "Varela Round", Sans-serif;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.fbtn:hover {
+  color: #d61a6f;
+  background: -webkit-gradient(linear, left top, left bottom, from(white));
+  background: linear-gradient(white);
+  border: 2px solid #d61a6f;
+  font: 400 16px/2.5 Nunito, "Varela Round", Sans-serif;
+  font-weight: bold;
+}
+
+.mobname {
+  text-transform: capitalize;
+  color: #242582;
+}
+
+.price {
+  color: red;
+}
+
+.ckitbtn {
+  color: white;
+  background-color: #242582;
+  border-radius: 10px;
+  -webkit-box-shadow: 5px 5px;
+          box-shadow: 5px 5px;
+}
+
+.ckitbtn:hover {
+  color: #242582;
+  background-color: white;
+  border: 2px solid #242582;
+  font-weight: bold;
+}
+
+.mbox {
+  border: 1px solid black;
+  -webkit-box-shadow: 2px 2px 5px black;
+          box-shadow: 2px 2px 5px black;
+}
+
+.row:hover {
+  border: 2px solid #242582;
+  -webkit-box-shadow: 2px 2px 5px #242582;
+          box-shadow: 2px 2px 5px #242582;
 }
 /*# sourceMappingURL=mobilelist.css.map */

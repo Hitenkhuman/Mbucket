@@ -4,3 +4,54 @@
 .checked {
   color: orange;
 }
+.mt {
+  background-color: $background;
+  padding: 2rem;
+  margin: 2rem 5rem 2rem 5rem;
+  background-image: linear-gradient($nav, $palate);
+  border-radius: 35px 0px 35px 0px;
+  box-shadow: 10px 5px 20px;
+}
+.mh {
+  color: yellow;
+  font-size: 7vw;
+  text-align: center;
+  font-family: cursive;
+}
+.bt {
+  font-size: 30px;
+  color: $nav;
+}
+.sbox {
+  border-radius: 20px;
+
+  padding: 5px 5px 5px 10px;
+  cursor: pointer;
+  background-color: $nav;
+  color: white;
+  text-transform: capitalize;
+  //appearance: none;
+}
+.sbox:hover {
+  outline: none;
+  border: 3px solid $nav;
+  color: $nav;
+  background-color: white;
+  font-weight: bold;
+}
+.sbox:focus {
+  outline: none;
+}
+.sbox option {
+  color: $nav;
+  background-color: white;
+  font-weight: bold;
+}
+thead {
+  text-transform: capitalize;
+  background-color: rgb(238, 238, 238);
+}
+table tr td:first-child {
+  font-weight: bold;
+  background-color: rgb(238, 238, 238);
+}

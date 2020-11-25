@@ -92,7 +92,28 @@ session_start();
 
   </nav>
 
-
+  <!-- <div id="myModal" class="modal fade">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Subscribe our Newsletter</h5>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <p>Subscribe to our mailing list to get the latest updates straight in your inbox.</p>
+          <form>
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Name">
+            </div>
+            <div class="form-group">
+              <input type="email" class="form-control" placeholder="Email Address">
+            </div>
+            <button type="submit" class="btn btn-primary">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div> -->
   <div id="loginModal" class="modal fade" role="dialog">
     <div class="modal-dialog modal-md modal-dialog-centered" role="content">
       <!-- Modal content-->
@@ -288,13 +309,12 @@ session_start();
 
   <footer class="page-footer font-small text-black">
 
-    <!-- Footer Links -->
+
     <div class="container text-center text-md-left">
 
-      <!-- Footer links -->
+
       <div class="row text-center text-md-left mt-3 pb-3">
 
-        <!-- Grid column -->
         <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mt-3">
           <h6 class="text-uppercase mb-4 font-weight-bold">About us</h6>
           <hr>
@@ -302,11 +322,10 @@ session_start();
             so we give all information like price, camera, processer, and many information that will help you to find best mobile for you.
           </p>
         </div>
-        <!-- Grid column -->
+
 
         <hr class="w-100 clearfix d-md-none">
 
-        <!-- Grid column -->
         <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
           <h6 class="text-uppercase mb-4 font-weight-bold">Quick search</h6>
           <hr>
@@ -327,10 +346,8 @@ session_start();
           </p>
         </div>
 
-        <!-- Grid column -->
         <hr class="w-100 clearfix d-md-none">
 
-        <!-- Grid column -->
         <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
           <h6 class="text-uppercase mb-4 font-weight-bold">Contact us</h6>
           <hr>
@@ -345,14 +362,12 @@ session_start();
             <i class="fab fa-whatsapp mr-3" style="font-size: 20px;"></i> +91 72848 82289</p>
           </p>
         </div>
-        <!-- Grid column -->
+
 
       </div>
-      <!-- Footer links -->
-      <!-- Grid column -->
+
       <div class="row justify-content-center">
 
-        <!-- Social buttons -->
         <div class="text-center text-md-right">
           <ul class="list-unstyled list-inline">
             <li class="list-inline-item">
@@ -384,36 +399,32 @@ session_start();
         </div>
 
       </div>
-      <!-- Grid column -->
+
 
       <hr>
 
-      <!-- Grid row -->
+
       <div class="row justify-content-center">
 
-        <!-- Grid column -->
-
-
-        <!--Copyright-->
         <p class="text-center text-md-left">© 2020 Copyright:
           <a href="index.php" style="text-decoration: none;color:yellow;">
             <strong> M-bucket.com</strong>
           </a>
         </p>
-        <!-- Grid column -->
+
 
 
 
       </div>
-      <!-- Grid row -->
+
 
     </div>
-    <!-- Footer Links -->
+
 
   </footer>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="./js/loginall.js"></script>
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script> -->
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 </body>

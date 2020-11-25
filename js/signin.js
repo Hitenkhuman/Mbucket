@@ -114,7 +114,7 @@ $(function ($) {
         if (isNaN(data)) alert("signin failed");
         else {
           user_id = data;
-          window.location.assign("index.php?" + user_id + "");
+          window.location.assign("index.php?userid=" + user_id + "");
         }
       },
     });
