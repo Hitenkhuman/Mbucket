@@ -108,4 +108,102 @@ html {
 .checked {
   color: orange;
 }
+
+.mt {
+  background-color: #2F2FA2;
+  padding: 2rem;
+  margin: 2rem 5rem 2rem 5rem;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#242582), to(#553D67));
+  background-image: linear-gradient(#242582, #553D67);
+  border-radius: 35px 0px 35px 0px;
+  -webkit-box-shadow: 10px 5px 20px;
+          box-shadow: 10px 5px 20px;
+}
+
+.mh {
+  color: yellow;
+  font-size: 7vw;
+  text-align: center;
+  font-family: cursive;
+}
+
+.pt {
+  color: #242582;
+  font-weight: bold;
+  font-size: 35px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+#price:hover, #price:focus {
+  border-radius: 20px;
+  color: #242582;
+  outline: none;
+}
+
+#price {
+  border-radius: 20px;
+  border: 2px solid #242582;
+  color: #242582;
+  font-weight: bold;
+}
+
+#ps {
+  background-color: #242582;
+  color: white;
+  border-radius: 10px;
+  padding: 2px 15px;
+}
+
+#ps:hover, #ps:focus {
+  background-color: white;
+  color: #242582;
+  font-weight: bold;
+  border: 1px solid #242582;
+  outline: none;
+}
+
+.mobname {
+  text-transform: capitalize;
+  color: #242582;
+}
+
+.price {
+  color: red;
+}
+
+.ckitbtn {
+  color: white;
+  background-color: #242582;
+  border-radius: 10px;
+  -webkit-box-shadow: 5px 5px;
+          box-shadow: 5px 5px;
+}
+
+.ckitbtn:hover {
+  color: #242582;
+  background-color: white;
+  border: 2px solid #242582;
+  font-weight: bold;
+}
+
+.mbox {
+  border: 1px solid black;
+  -webkit-box-shadow: 2px 2px 5px black;
+          box-shadow: 2px 2px 5px black;
+}
+
+.rbx:hover {
+  border: 2px solid #242582;
+  -webkit-box-shadow: 2px 2px 5px #242582;
+          box-shadow: 2px 2px 5px #242582;
+}
 /*# sourceMappingURL=pricesearch.css.map */

@@ -4,3 +4,83 @@
 .checked {
   color: orange;
 }
+.mt {
+  background-color: $background;
+  padding: 2rem;
+  margin: 2rem 5rem 2rem 5rem;
+  background-image: linear-gradient($nav, $palate);
+  border-radius: 35px 0px 35px 0px;
+  box-shadow: 10px 5px 20px;
+}
+.mh {
+  color: yellow;
+  font-size: 7vw;
+  text-align: center;
+  font-family: cursive;
+}
+.pt {
+  color: $nav;
+  font-weight: bold;
+  font-size: 35px;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] {
+  -moz-appearance: textfield;
+}
+#price:hover,#price:focus {
+  border-radius: 20px;
+  color: $nav;
+  outline: none;
+}
+#price {
+  border-radius: 20px;
+  border: 2px solid $nav;
+  color: $nav;
+  font-weight: bold;
+}
+#ps {
+  background-color: $nav;
+  color: white;
+  border-radius: 10px;
+  padding: 2px 15px;
+}
+#ps:hover,#ps:focus {
+  background-color: white;
+  color: $nav;
+  font-weight: bold;
+  border: 1px solid $nav;
+  outline: none;
+}
+
+
+.mobname {
+  text-transform: capitalize;
+  color: $nav;
+}
+.price {
+  color: red;
+}
+.ckitbtn {
+  color: white;
+  background-color: $nav;
+  border-radius: 10px;
+  box-shadow: 5px 5px;
+}
+.ckitbtn:hover {
+  color: $nav;
+  background-color: white;
+  border: 2px solid $nav;
+  font-weight: bold;
+}
+.mbox {
+  border: 1px solid black;
+  box-shadow: 2px 2px 5px black;
+}
+.rbx:hover {
+  border: 2px solid $nav;
+  box-shadow: 2px 2px 5px $nav;
+}

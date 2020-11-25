@@ -232,7 +232,7 @@ session_start();
         foreach ($row as $key => $value) {
           echo '<div class="col-12 col-sm-6 col-md-4 col-lg-3 p-5">
                 <h3><span class="badge badge-danger" style="float:left;">M-Bucket Choice</span></h3>
-        <div class="card" style="width: 18rem;">
+        <div class="card" style="width: 19rem;">
         <div class="flip-box">
         <div class="flip-box-inner">
         <div class="flip-box-front">
@@ -273,7 +273,7 @@ session_start();
         foreach ($row as $key => $value) {
           echo '<div class="col-12 col-sm-6 col-md-4 col-lg-3 p-5">
           <h3><span class="badge badge-success" style="float:left;">New</span></h3>
-        <div class="card" style="width: 18rem;">
+        <div class="card" style="width: 19rem;">
         <div class="flip-box">
         <div class="flip-box-inner">
         <div class="flip-box-front">

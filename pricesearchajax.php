@@ -22,13 +22,13 @@ try {
                 $row1 = $stmt->fetch(PDO::FETCH_ASSOC);
 
                 $mobimg = $row1['mobile_image'];
-                $output .= ' <div class="row">';
+                $output .= ' <div class="row mbox rbx m-5">';
                 $output .= '<div class="col-12 col-md-5">';
                 $output .= ' <img src="./images/' . $mobimg . '.png" alt="mobile image" class="img-fluid">';
                 $output .= ' </div>';
                 $output .= '<div class="col-12 col-md-7">';
                 $output .= ' <div class="pt-md-3">';
-                $output .= '<h1>' . $row1["brand_name"] . ' ' . $row1["mobile_name"] . '</h1>';
+                $output .= '<h1 class="mobname">' . $row1["brand_name"] . ' ' . $row1["mobile_name"] . '</h1>';
                 $output .= '</div>';
                 $output .= ' <div class="price">';
                 $output .= ' <h2><span> ₹ </span><span>' . $row1["price"] . '</span></h2>';
@@ -43,7 +43,7 @@ try {
                 }
                 $output .= '</div>';
                 $output .= ' <div class="info">';
-                $output .= ' <a href="mobileinfo.php?id=' . $row1['model_id'] . '">Check it</a>';
+                $output .= ' <a href="mobileinfo.php?id=' . $row1['model_id'] . '" class="ckitbtn btn mt-3">Check it</a>';
                 $output .= ' </div>';
                 $output .= '  </div>';
                 $output .= '</div>';

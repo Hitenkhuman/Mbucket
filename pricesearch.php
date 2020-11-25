@@ -147,15 +147,19 @@
     </div>
 
     <div class="main">
-        <div class="container">
-            <h1>price Search</h1>
-            <label for="price">Enter Price</label>
-            <input type="number" id="price">
+    <div class="mt">
+            <h1 class="mh">Price Search</h1>
+    </div>
+        <div class="container mt-5">
+        
+            <label for="price" class="pt">Enter Price</label>
+            <input type="number" id="price" value=""> 
             <button id="ps">Search</button>
-        </div>
-        <div id="dt">
+            <div id="dt">
 
         </div>
+        </div>
+        
     </div>
 
 

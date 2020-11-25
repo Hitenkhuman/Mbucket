@@ -170,7 +170,7 @@ session_start();
                         $stmt = $pdo->prepare("SELECT * FROM brands INNER JOIN models ON brands.brand_id=models.brand_id JOIN mobiles ON models.model_id=mobiles.model_id WHERE mobile_id=:id");
                         $stmt->execute(array(':id' => $modelid));
                         $row1 = $stmt->fetch(PDO::FETCH_ASSOC);
-                        echo ' <div class="row mbox m-5">';
+                        echo ' <div class="row mbox rbx m-5">';
                         echo '<div class="col-12 col-md-5">';
                         echo ' <img src="./images/' . $mobimg . '.png" alt="mobile image" class="img-fluid">';
                         echo ' </div>';
