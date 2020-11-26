@@ -15,7 +15,7 @@ session_start();
 </head>
 
 <body>
-    <header class="headernav">
+    <header class="headernav container-fluid">
         <div class="row p-2">
             <div class="col-1 d-sm-none m-1">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -226,7 +226,7 @@ session_start();
                     </button>
                 </div>
             </div>
-            <div class="row mr-2 mr-md-0" id="comparetable">
+            <div class="row mt-2" id="comparetable">
 
             </div>
         </div>

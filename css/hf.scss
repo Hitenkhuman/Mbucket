@@ -38,12 +38,14 @@ hr {
   background-color: $nav;
 }
 
-body,
-html {
-  overflow-x: hidden;
-  width: 100%;
-  margin: 0px;
-  padding: 0px;
+@media only screen and (max-width: 600px) {
+  body,
+  html {
+    overflow-x: hidden;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+  }
 }
 .social-icon {
   color: white;

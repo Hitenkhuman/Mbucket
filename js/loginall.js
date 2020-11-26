@@ -78,7 +78,7 @@ $(document).ready(function () {
     var no = "1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
     var x = no[Math.floor(Math.random() * no.length)];
 
-    for (let i = 0; i < 6; i++) {
+    for (let i = 0; i < 4; i++) {
       x = x + no[Math.floor(Math.random() * no.length)];
     }
     cap = x;

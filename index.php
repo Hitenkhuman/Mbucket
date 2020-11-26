@@ -16,7 +16,7 @@ session_start();
 </head>
 
 <body>
-  <header class="headernav">
+  <header class="headernav container-fluid sticky-top">
     <div class="row p-2">
       <div class="col-1 d-sm-none m-1">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
