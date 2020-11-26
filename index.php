@@ -30,11 +30,11 @@ session_start();
           <img src="./images/logo.png" alt="logo" class="img-responsive pl-3 pt-2" id="logoimage">
         </a>
       </div>
-      <div class="col-12 col-md-8  order-12 order-md-1 pt-1 pb-1">
+      <div class="col-12 col-md-7  order-12 order-md-1 pt-1 pb-1">
         <form class="form-inline" method="POST" action="livesearch.php">
           <input class="form-control mr-sm-2 w-75 ml-3 searchbox" type="search" placeholder="Search" aria-label="Search" name="searchtext">
           <button type="submit" class="btn srbtn">
-            <i class="fas fa-search mr-3" id="searchbtn"></i>
+            <i class="fas fa-search" id="searchbtn"></i>
           </button>
 
         </form>
@@ -43,15 +43,33 @@ session_start();
       <div class="col-2 col-md-1 order-1 order-md-11 pt-2">
 
         <a href="signin.php" style="color: white;" data-toggle="tooltip" data-placement="bottom" title="Sign in">
-          <span class="fas fa-user-plus"> &nbsp;</span>
+          <span class="fas fa-user-plus"></span>
         </a>
 
       </div>
       <div class="col-2 col-md-1 order-2 order-md-12" style="margin-top: 1px;">
-        <span class="navbar-text">
-          <a data-toggle="modal" data-target="#loginModal" data-toggle="tooltip" data-placement="bottom" title="log in">
-            <span class="fa fa-sign-in"></span></a>
-        </span>
+        <?php
+        if (isset($_SESSION['login'])) {
+
+          echo '<div class="dropdown">
+        <a class="btn nav-link dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <span class="fa fa-user-circle" style="font-size: 20px;"></span>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="myprofile.php">My Profile</a>
+          <a class="dropdown-item" href="mobiles.php">View Mobile</a>
+          <a class="dropdown-item" href="logout.php">Log out</a>
+        </div>
+      </div>';
+        } else {
+          echo '<span class="navbar-text">
+        <a data-toggle="modal" data-target="#loginModal" data-toggle="tooltip" data-placement="bottom" title="log in">
+          <span class="fa fa-sign-in"></span></a>
+      </span>';
+        }
+        ?>
+
+
       </div>
 
     </div>
@@ -91,32 +109,17 @@ session_start();
 
 
   </nav>
+  <?php
+  if (isset($_SESSION['loginmsg']) || isset($_SESSION['signin'])) {
+    echo '';
+  }
+  unset($_SESSION['signin']);
+  unset($_SESSION['loginmsg']);
+  ?>
 
-  <!-- <div id="myModal" class="modal fade">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Subscribe our Newsletter</h5>
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-        </div>
-        <div class="modal-body">
-          <p>Subscribe to our mailing list to get the latest updates straight in your inbox.</p>
-          <form>
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Name">
-            </div>
-            <div class="form-group">
-              <input type="email" class="form-control" placeholder="Email Address">
-            </div>
-            <button type="submit" class="btn btn-primary">Subscribe</button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div> -->
   <div id="loginModal" class="modal fade" role="dialog">
     <div class="modal-dialog modal-md modal-dialog-centered" role="content">
-      <!-- Modal content-->
+
       <div class="modal-content">
         <div class="modal-header">
           <div class="container">
@@ -165,6 +168,29 @@ session_start();
             <div class="form-row ml-2">
               <a href="forgetpass.php" style="text-decoration: none;color:#2F2FA2;">forget password? </a>
             </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="myModal" class="modal fade">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Wellcome to M-bucket</h5>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <p>Subscribe to our mailing list to get the latest updates straight in your inbox.</p>
+          <form>
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Name">
+            </div>
+            <div class="form-group">
+              <input type="email" class="form-control" placeholder="Email Address">
+            </div>
+            <button type="submit" class="btn btn-primary">Subscribe</button>
           </form>
         </div>
       </div>
@@ -252,7 +278,7 @@ session_start();
         </div>';
         }
       } catch (PDOException $error) {
-        echo "ERROR" . $error->getMessage();
+        echo 'Something Went Wrong';
       }
 
 
@@ -293,7 +319,7 @@ session_start();
         </div>';
         }
       } catch (PDOException $error) {
-        echo "ERROR" . $error->getMessage();
+        echo 'something Went Wrong';
       }
 
 

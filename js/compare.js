@@ -1,4 +1,4 @@
-$(function ($) {
+$(document).ready(function () {
   $("#mobsel").click(function (e) {
     e.preventDefault();
     var mob1 = $("#brand1").val();

@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,11 +29,11 @@
                     <img src="./images/logo.png" alt="logo" class="img-responsive pl-3 pt-2" id="logoimage">
                 </a>
             </div>
-            <div class="col-12 col-md-8  order-12 order-md-1 pt-1 pb-1">
+            <div class="col-12 col-md-7  order-12 order-md-1 pt-1 pb-1">
                 <form class="form-inline" method="POST" action="livesearch.php">
                     <input class="form-control mr-sm-2 w-75 ml-3 searchbox" type="search" placeholder="Search" aria-label="Search" name="searchtext">
                     <button type="submit" class="btn srbtn">
-                        <i class="fas fa-search mr-3" id="searchbtn"></i>
+                        <i class="fas fa-search" id="searchbtn"></i>
                     </button>
 
                 </form>
@@ -39,15 +42,33 @@
             <div class="col-2 col-md-1 order-1 order-md-11 pt-2">
 
                 <a href="signin.php" style="color: white;" data-toggle="tooltip" data-placement="bottom" title="Sign in">
-                    <span class="fas fa-user-plus"> &nbsp;</span>
+                    <span class="fas fa-user-plus"></span>
                 </a>
 
             </div>
             <div class="col-2 col-md-1 order-2 order-md-12" style="margin-top: 1px;">
-                <span class="navbar-text">
-                    <a data-toggle="modal" data-target="#loginModal" data-toggle="tooltip" data-placement="bottom" title="log in">
-                        <span class="fa fa-sign-in"></span></a>
-                </span>
+                <?php
+                if (isset($_SESSION['login'])) {
+
+                    echo '<div class="dropdown">
+        <a class="btn nav-link dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <span class="fa fa-user-circle" style="font-size: 20px;"></span>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="myprofile.php">My Profile</a>
+          <a class="dropdown-item" href="mobiles.php">View Mobile</a>
+          <a class="dropdown-item" href="logout.php">Log out</a>
+        </div>
+      </div>';
+                } else {
+                    echo '<span class="navbar-text">
+        <a data-toggle="modal" data-target="#loginModal" data-toggle="tooltip" data-placement="bottom" title="log in">
+          <span class="fa fa-sign-in"></span></a>
+      </span>';
+                }
+                ?>
+
+
             </div>
 
         </div>

@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,11 +30,11 @@
                     <img src="./images/logo.png" alt="logo" class="img-responsive pl-3 pt-2" id="logoimage">
                 </a>
             </div>
-            <div class="col-12 col-md-8  order-12 order-md-1 pt-1 pb-1">
+            <div class="col-12 col-md-7  order-12 order-md-1 pt-1 pb-1">
                 <form class="form-inline" method="POST" action="livesearch.php">
                     <input class="form-control mr-sm-2 w-75 ml-3 searchbox" type="search" placeholder="Search" aria-label="Search" name="searchtext">
                     <button type="submit" class="btn srbtn">
-                        <i class="fas fa-search mr-3" id="searchbtn"></i>
+                        <i class="fas fa-search" id="searchbtn"></i>
                     </button>
 
                 </form>
@@ -40,15 +43,33 @@
             <div class="col-2 col-md-1 order-1 order-md-11 pt-2">
 
                 <!-- <a href="signin.php" style="color: white;" data-toggle="tooltip" data-placement="bottom" title="Sign in">
-                    <span class="fas fa-user-plus"> &nbsp;</span>
+                    <span class="fas fa-user-plus"></span>
                 </a> -->
 
             </div>
             <div class="col-2 col-md-1 order-2 order-md-12" style="margin-top: 1px;">
-                <span class="navbar-text">
-                    <a data-toggle="modal" data-target="#loginModal" data-toggle="tooltip" data-placement="bottom" title="log in">
-                        <span class="fa fa-sign-in"></span></a>
-                </span>
+                <?php
+                if (isset($_SESSION['login'])) {
+
+                    echo '<div class="dropdown">
+        <a class="btn nav-link dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <span class="fa fa-user-circle" style="font-size: 20px;"></span>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="myprofile.php">My Profile</a>
+          <a class="dropdown-item" href="mobiles.php">View Mobile</a>
+          <a class="dropdown-item" href="logout.php">Log out</a>
+        </div>
+      </div>';
+                } else {
+                    echo '<span class="navbar-text">
+        <a data-toggle="modal" data-target="#loginModal" data-toggle="tooltip" data-placement="bottom" title="log in">
+          <span class="fa fa-sign-in"></span></a>
+      </span>';
+                }
+                ?>
+
+
             </div>
 
         </div>
@@ -147,89 +168,94 @@
         </div>
     </div>
 
-    <br>
-    <h1>Sign in</h1>
 
+    <div class="main mt-5">
+        <div class="container signinbx pt-5 pb-5 mb-5">
 
-    <div class="container">
-        <form class="form row" method="POST">
-            <div class="form-group col-12 row">
-                <i class="fas fa-user p-2" aria-hidden="true"></i>
-                <input type="email" class="form-control col-10 col-sm-8" id="useremail" aria-describedby="emailHelp" placeholder="Email id" name="useremail">
-                <small id="emailHelp" class="form-text text-muted col-12 col-sm-3">We'll never share your email with anyone else.</small>
-            </div>
-            <div class="form-group col-12 row">
-                <i class="fas fa-mobile p-2 " aria-hidden="true"></i>&nbsp;
-                <input type="text" class="form-control col-10 col-sm-8" id="usermobile" aria-describedby="mobileHelp" placeholder="Mobile Number" name="usermobile">
-                <small id="mobileHelp" class="form-text text-muted col-12 col-sm-3">We'll never share your mobile with anyone else.</small>
-            </div>
-            <div class="form-group col-12 row">
+            <form class="form row ml-md-5 ml-2 " method="POST">
+                <div class="form-group col-12 row">
+                    <div class="offset-md-2 offset-4 offset-md-4">
+                        <h1 class="stitle">Sign in</h1>
+                    </div>
 
-                <button class="btn btn-primary offset-md-2 offset-3 offset-md-4" id="otpgen">
-
-                    Generate Otp <i class="fas fa-key" aria-hidden="true"></i>
-                </button>
-                <div class="spinner-border ml-2" id="spinner" role="status">
-                    <span class="sr-only">Loading...</span>
                 </div>
-
-            </div>
-
-            <div class="form-group col-12 row">
-                <b class="pt-1">M-</b>
-                <div class="col-12 col-md-5">
-
-                    <input type="text" id="otp" class="form-control" aria-describedby="otphelp" placeholder="Enter OTP">
-                    <small id="otphelp" class="text-muted col-md-3">otp help</small>
+                <div class="form-group col-12 row mt-5">
+                    <i class="fas fa-user p-2" aria-hidden="true"></i>
+                    <input type="email" class="form-control col-10 col-sm-8" id="useremail" aria-describedby="emailHelp" placeholder="Email id" name="useremail">
+                    <small id="emailHelp" class="form-text  col-12 col-sm-3"></small>
                 </div>
+                <div class="form-group col-12 row">
+                    <i class="fas fa-mobile p-2 " aria-hidden="true"></i>&nbsp;
+                    <input type="text" class="form-control col-10 col-sm-8" id="usermobile" aria-describedby="mobileHelp" placeholder="Mobile Number" name="usermobile">
+                    <small id="mobileHelp" class="form-text  col-12 col-sm-3"></small>
+                </div>
+                <div class="form-group col-12 row">
 
+                    <button class="btn btn-primary offset-md-2 offset-3 offset-md-4" id="otpgen">
 
-                <div class="form-group col-12 col-md-3">
-
-                    <button class="btn resent offset-md-1 offset-3 mb-3" disabled id="otpres">
-                        Resend OTP <i class="fas fa-redo" aria-hidden="true"></i>
+                        Generate OTP <i class="fas fa-key" aria-hidden="true"></i>
                     </button>
-                    <div class="spinner-border ml-2 mt-1" id="spinner1" role="status">
+                    <div class="spinner-border ml-2" id="spinner" role="status">
                         <span class="sr-only">Loading...</span>
                     </div>
 
                 </div>
-                <div class="col-12 col-md-2" id="clock">
-                    <span id="timer"></span>
-                    <div><small>OTP valid for 1 minute only...</small></div>
+
+                <div class="form-group col-12 row">
+                    <b class="pt-1">M-</b>
+                    <div class="col-12 col-md-5">
+
+                        <input type="text" id="otp" class="form-control" aria-describedby="otphelp" placeholder="Enter OTP">
+                        <small id="otphelp" class=" col-md-3"></small>
+                    </div>
+
+
+                    <div class="form-group col-12 col-md-3">
+
+                        <button class="btn resent offset-md-1 offset-3 mb-3" disabled id="otpres">
+                            Resend OTP <i class="fas fa-redo" aria-hidden="true"></i>
+                        </button>
+                        <div class="spinner-border ml-2 mt-1" id="spinner1" role="status">
+                            <span class="sr-only">Loading...</span>
+                        </div>
+
+                    </div>
+                    <div class="col-12 col-md-2" id="clock">
+                        <span id="timer"></span>
+                        <div><small>OTP valid for 1 minute only...</small></div>
+                    </div>
+
                 </div>
 
-            </div>
+                <div class="form-group col-12 row">
+                    <button class="btn btn-success offset-md-2 offset-4 offset-md-4" id="otpver">
+                        Verify OTP <i class="fas fa-redo" aria-hidden="true"></i>
+                    </button>
 
-            <div class="form-group col-12 row">
-                <button class="btn btn-success offset-md-2 offset-4 offset-md-4" id="otpver">
-                    Verify OTP <i class="fas fa-redo" aria-hidden="true"></i>
-                </button>
-
-            </div>
-            <div class="form-group col-12 row">
-                <i class="fas fa-unlock p-2" aria-hidden="true"></i>
-                <input type="password" id="userpass" class="form-control col-10 col-sm-8" placeholder="password" aria-describedby="passhelp" name="userpass">
-                <small id="passhelp" class="text-muted col-12 col-sm-3">Help text</small>
-            </div>
-            <div class="form-group col-12 row">
-                <i class="fas fa-lock p-2" aria-hidden="true"></i>
-                <input type="text" id="confirmpass" class="form-control col-sm-8 col-10" placeholder="Confirm password" aria-describedby="conpasshelp">
-                <small id="conpasshelp" class="text-muted col-12 col-sm-3">Help text</small>
-            </div>
-            <div class="form-group col-12">
-                <button class="btn btn-success text-light" disabled id="signin">
-                    Sign in <i class="fas fa-sign-in-alt" aria-hidden="true"></i>
-                </button>
-            </div>
+                </div>
+                <div class="form-group col-12 row">
+                    <i class="fas fa-unlock p-2" aria-hidden="true"></i>
+                    <input type="password" id="userpass" class="form-control col-10 col-sm-8" placeholder="password" aria-describedby="passhelp" name="userpass">
+                    <small id="passhelp" class=" col-12 col-sm-3"></small>
+                </div>
+                <div class="form-group col-12 row">
+                    <i class="fas fa-lock p-2" aria-hidden="true"></i>
+                    <input type="text" id="confirmpass" class="form-control col-sm-8 col-10" placeholder="Confirm password" aria-describedby="conpasshelp">
+                    <small id="conpasshelp" class="col-12 col-sm-3"></small>
+                </div>
+                <div class="form-group col-12">
+                    <button class="btn btn-success text-light" disabled id="signin">
+                        Sign in <i class="fas fa-sign-in-alt" aria-hidden="true"></i>
+                    </button>
+                </div>
 
 
-        </form>
+            </form>
 
+
+        </div>
 
     </div>
-
-
 
 
 

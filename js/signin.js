@@ -1,13 +1,15 @@
 var otp;
 var tt;
 var count;
-$(function ($) {
+$(document).ready(function () {
   $("#otpgen").click(function (e) {
     e.preventDefault();
     var email = $("#useremail").val();
     var mobile = $("#usermobile").val();
     if (varifyemail(email)) {
+      $("#emailHelp").text("");
       if (varifymobile(mobile)) {
+        $("#mobileHelp").text("");
         $.ajax({
           type: "POST",
           url: "otpgen.php",
@@ -20,10 +22,16 @@ $(function ($) {
           },
           success: function (data) {
             if (isNaN(data)) {
-              alert("otp not sent");
+              $("#otphelp")
+                .text("Something went wrong...please try again")
+                .css("color", "red")
+                .css("fontWeight", "bolder");
             } else {
               otp = data;
-              alert("otp sent");
+              $("#otphelp")
+                .text("OTP SUCCESSFULLY SENT..")
+                .css("color", "green")
+                .css("fontWeight", "bolder");
               $("#spinner").hide();
               $("#otpgen").slideUp(1000);
               $("#otpres").attr("disabled", false);
@@ -33,10 +41,16 @@ $(function ($) {
           },
         });
       } else {
-        alert("Incorrect Mobile Number");
+        $("#mobileHelp")
+          .text("Please enter valid Mobile Number")
+          .css("color", "red")
+          .css("fontWeight", "bolder");
       }
     } else {
-      alert("not okk email");
+      $("#emailHelp")
+        .text("Please enter valid email address")
+        .css("color", "red")
+        .css("fontWeight", "bolder");
     }
   });
 
@@ -55,12 +69,20 @@ $(function ($) {
         $("#spinner1").show();
       },
       success: function (data) {
-        if (isNaN(data)) alert("otp not sent");
-        else {
+        if (isNaN(data)) {
+          $("#otphelp")
+            .text("Something went wrong...please try again")
+            .css("color", "red")
+            .css("fontWeight", "bolder");
+        } else {
           otp = data;
           $("#spinner1").hide();
-          alert("otp resent");
+          $("#otphelp")
+            .text("OTP SUCCESSFULLY SENT..")
+            .css("color", "green")
+            .css("fontWeight", "bolder");
           count = 60;
+          clearInterval(tt);
           tt = setInterval(timer, 1000);
         }
       },
@@ -71,9 +93,15 @@ $(function ($) {
     e.preventDefault();
     var userotp = $("#otp").val();
     if (userotp != otp) {
-      alert("Incorrect otp");
+      $("#otphelp")
+        .text("INCORRECT OTP !!")
+        .css("color", "red")
+        .css("fontWeight", "bolder");
     } else {
-      alert("verified otp");
+      $("#otphelp")
+        .text("OTP Successfully Varified ")
+        .css("color", "green")
+        .css("fontWeight", "bolder");
       clearInterval(tt);
       $("#clock").slideUp();
       $("#signin").attr("disabled", false);
@@ -83,9 +111,14 @@ $(function ($) {
   $("#userpass").blur(function () {
     var userpass = $("#userpass").val();
     if (!varifypass(userpass)) {
-      alert(
-        "Input Password and Submit [7 to 15 characters which contain at least one numeric digit and a special character]"
-      );
+      $("#passhelp")
+        .text(
+          "Input Password and Submit [7 to 15 characters which contain at least one numeric digit and a special character]"
+        )
+        .css("color", "red")
+        .css("fontWeight", "bolder");
+    } else {
+      $("#passhelp").text("");
     }
   });
 
@@ -93,7 +126,12 @@ $(function ($) {
     var userpass = $("#userpass").val();
     var confirmpass = $("#confirmpass").val();
     if (userpass != confirmpass) {
-      alert("password must match");
+      $("#conpasshelp")
+        .text("Password must match")
+        .css("color", "red")
+        .css("fontWeight", "bolder");
+    } else {
+      $("#passhelp").text("");
     }
   });
 
@@ -111,10 +149,18 @@ $(function ($) {
         userpass: userpass,
       },
       success: function (data) {
-        if (isNaN(data)) alert("signin failed");
-        else {
+        if (isNaN(data)) {
+          $("#emailHelp")
+            .text("Already register account with us...")
+            .css("color", "red")
+            .css("fontWeight", "bolder");
+          $("#mobilelHelp")
+            .text("Please Enter new data to signin..")
+            .css("color", "red")
+            .css("fontWeight", "bolder");
+        } else {
           user_id = data;
-          window.location.assign("index.php?userid=" + user_id + "");
+          window.location.assign("index.php");
         }
       },
     });
@@ -160,7 +206,7 @@ $(function ($) {
     if (count < 0) {
       clearInterval(tt);
       otp = null;
-      alert("timeout");
+      alert("Otp has been expired...");
       $("#timer").hide();
     }
     if (count < 10 && count >= 0) {

@@ -5,7 +5,7 @@ try {
     require_once "pdo.php";
     $output = '';
     if (isset($_POST['price'])) {
-        $sql = "SELECT * FROM mobiles WHERE price BETWEEN :low AND :high";
+        $sql = "SELECT * FROM mobiles WHERE price BETWEEN :low AND :high ";
         $stmt = $pdo->prepare($sql);
         $stmt->execute(
             array(
@@ -50,11 +50,32 @@ try {
             }
             echo $output;
         } else {
-            echo 0;
+            echo '<div>
+            <div class="main1">
+                <h1 style="font-size: 70px;color:red;">Oops....</h1>
+                <h1 style="font-size: 50px;color:blue;">Mobiles Not Found</h1>
+                <p>We will add it as soon as possible...<br />try another price?</p>
+                <a class="fbtn btn" href="index.php">Home</a>
+            </div>
+        </div>';
         }
     } else {
-        echo "NO MOBILE FOUND";
+        echo '<div>
+        <div class="main1">
+            <h1 style="font-size: 70px;color:red;">Oops....</h1>
+            <h1 style="font-size: 50px;color:blue;">Mobiles Not Found</h1>
+            <p>We will add it as soon as possible...<br />try another price?</p>
+            <a class="fbtn btn" href="index.php">Home</a>
+        </div>
+    </div>';
     }
 } catch (PDOException $error) {
-    echo "ERROR" . $error->getMessage();
+    echo '<div>
+    <div class="main1">
+        <h1 style="font-size: 70px;color:red;">Oops....</h1>
+        <h1 style="font-size: 50px;color:blue;">Mobiles Not Found</h1>
+        <p>We will add it as soon as possible...<br />try another price?</p>
+        <a class="fbtn btn" href="index.php">Home</a>
+    </div>
+</div>';
 }

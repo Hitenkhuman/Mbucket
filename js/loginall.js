@@ -1,22 +1,25 @@
 var user_id;
 var cap;
-$(function ($) {
+$(document).ready(function () {
   $("#login").click(function (e) {
     e.preventDefault();
     var email = $("#loginemail").val();
     var pass = $("#loginpass").val();
     var usercap = $("#usercap").val();
     if (varifyemail(email)) {
-      $("#loginemailHelp").text("Verified..");
-      $("#loginemailHelp").css("color", "green");
+      $("#loginemailHelp").text("");
+
       if (varifypass(pass)) {
-        $("#passHelp").text("Verified..").css("color", "green");
+        $("#passHelp").text("");
         if (usercap != cap) {
-          $("#capHelp").text("INVALID CAPTCHA").css("color", "red");
+          $("#capHelp")
+            .text("INVALID CAPTCHA")
+            .css("color", "red")
+            .css("fontWeight", "bolder");
           captcha();
           $("#captcha").html(cap);
         } else {
-          $("#capHelp").text("Verified..").css("color", "green");
+          $("#capHelp").text("");
           $.ajax({
             type: "POST",
             url: "login.php",
@@ -27,15 +30,13 @@ $(function ($) {
             success: function (data) {
               if (isNaN(data)) {
                 $("#loginemailHelp")
-                  .text("Email id Not Found..")
-                  .css("color", "red");
-                $("#passHelp")
-                  .text("Create new Account first..")
-                  .css("color", "red");
+                  .text("Invalid Username Or password..")
+                  .css("color", "red")
+                  .css("fontWeight", "bolder");
               } else {
                 user_id = data;
                 $("#loginModal .close").click();
-                window.location.assign("index.php?userid=" + user_id + "");
+                window.location.assign("index.php");
               }
             },
           });
@@ -45,10 +46,14 @@ $(function ($) {
           .text(
             "Incorrect Password [7 to 15 characters which contain at least one numeric digit and a special character]"
           )
-          .css("color", "red");
+          .css("color", "red")
+          .css("fontWeight", "bolder");
       }
     } else {
-      $("#loginemailHelp").text("Invalid Email Address..").css("color", "red");
+      $("#loginemailHelp")
+        .text("Invalid Email Address..")
+        .css("color", "red")
+        .css("fontWeight", "bolder");
     }
   });
 
@@ -81,7 +86,7 @@ $(function ($) {
   $(window).on("load", function () {
     captcha();
     $("#captcha").html(cap);
-    //$("#myModal").modal("show");
+    $("#myModal").modal("show");
   });
 
   function varifyemail(email) {

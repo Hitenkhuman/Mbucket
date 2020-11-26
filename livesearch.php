@@ -29,11 +29,11 @@ session_start();
                     <img src="./images/logo.png" alt="logo" class="img-responsive pl-3 pt-2" id="logoimage">
                 </a>
             </div>
-            <div class="col-12 col-md-8  order-12 order-md-1 pt-1 pb-1">
+            <div class="col-12 col-md-7  order-12 order-md-1 pt-1 pb-1">
                 <form class="form-inline" method="POST" action="livesearch.php">
                     <input class="form-control mr-sm-2 w-75 ml-3 searchbox" type="search" placeholder="Search" aria-label="Search" name="searchtext">
                     <button type="submit" class="btn srbtn">
-                        <i class="fas fa-search mr-3" id="searchbtn"></i>
+                        <i class="fas fa-search" id="searchbtn"></i>
                     </button>
 
                 </form>
@@ -42,22 +42,36 @@ session_start();
             <div class="col-2 col-md-1 order-1 order-md-11 pt-2">
 
                 <a href="signin.php" style="color: white;" data-toggle="tooltip" data-placement="bottom" title="Sign in">
-                    <span class="fas fa-user-plus"> &nbsp;</span>
+                    <span class="fas fa-user-plus"></span>
                 </a>
 
             </div>
             <div class="col-2 col-md-1 order-2 order-md-12" style="margin-top: 1px;">
-                <span class="navbar-text">
-                    <a data-toggle="modal" data-target="#loginModal" data-toggle="tooltip" data-placement="bottom" title="log in">
-                        <span class="fa fa-sign-in"></span></a>
-                </span>
+                <?php
+                if (isset($_SESSION['login'])) {
+
+                    echo '<div class="dropdown">
+        <a class="btn nav-link dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <span class="fa fa-user-circle" style="font-size: 20px;"></span>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="myprofile.php">My Profile</a>
+          <a class="dropdown-item" href="mobiles.php">View Mobile</a>
+          <a class="dropdown-item" href="logout.php">Log out</a>
+        </div>
+      </div>';
+                } else {
+                    echo '<span class="navbar-text">
+        <a data-toggle="modal" data-target="#loginModal" data-toggle="tooltip" data-placement="bottom" title="log in">
+          <span class="fa fa-sign-in"></span></a>
+      </span>';
+                }
+                ?>
+
+
             </div>
 
         </div>
-
-
-
-
 
     </header>
 
@@ -160,17 +174,17 @@ session_start();
                     $stmt = $pdo->prepare($sql);
                     $stmt->execute(array(':st' => strtolower($_POST['searchtext'])));
                     if ($row = $stmt->fetchAll(PDO::FETCH_ASSOC)) {
-                        echo '<h1>Showing Results for.."' . $_POST['searchtext'] . '"</h1>';
+                        echo '<h3 class="p-3">Showing Results for.."<span class="text-danger">' . $_POST['searchtext'] . '</span>"</h3>';
                         foreach ($row as $key => $value) {
                             $mobimg = $value['mobile_image'];
 
-                            echo ' <div class="row">';
+                            echo ' <div class="row mbox rbx m-5">';
                             echo '<div class="col-12 col-md-5">';
                             echo ' <img src="./images/' . $mobimg . '.png" alt="mobile image" class="img-fluid">';
                             echo ' </div>';
                             echo '<div class="col-12 col-md-7">';
                             echo ' <div class="pt-md-3">';
-                            echo '<h1>' . $value["brand_name"] . ' ' . $value["mobile_name"] . '</h1>';
+                            echo '<h1 class="mobname">' . $value["brand_name"] . ' ' . $value["mobile_name"] . '</h1>';
                             echo '</div>';
                             echo ' <div class="price">';
                             echo ' <h2><span> ₹ </span><span>' . $value["price"] . '</span></h2>';
@@ -185,15 +199,20 @@ session_start();
                             }
                             echo '</div>';
                             echo ' <div class="info">';
-                            echo ' <a href="mobileinfo.php?id=' . $value['model_id'] . '">Check it</a>';
+                            echo ' <a href="mobileinfo.php?id=' . $value['model_id'] . '"  class="ckitbtn btn mt-3">Check it</a>';
                             echo ' </div>';
                             echo '  </div>';
                             echo '</div>';
                         }
                     } else {
-                        echo '<h1>OOPS.......</h1>
-                        <h3>No MOBILE FOUND</h3>
-                        <b>SERCH SOMETHING DIFFERENT</b>';
+                        echo '<div>
+                        <div class="main1">
+                            <h1 style="font-size: 70px;color:red;">Oops....</h1>
+                            <h1 style="font-size: 50px;color:blue;">Mobiles Not Found</h1>
+                            <p>Search something else...<br />try another price?</p>
+                            <a class="fbtn btn" href="index.php">Home</a>
+                        </div>
+                    </div>';
                     }
                 }
             } catch (PDOException $error) {

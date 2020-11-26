@@ -13,6 +13,7 @@
 
 .nav-link:hover {
   color: #F64C72;
+  font-weight: bold;
 }
 
 .current {
@@ -118,5 +119,16 @@ html {
 #spinner1 {
   color: #f64c72;
   display: none;
+}
+
+.signinbx {
+  border: 5px solid #242582;
+  border-radius: 3rem;
+}
+
+.stitle {
+  color: #242582;
+  font-weight: bold;
+  font-family: serif;
 }
 /*# sourceMappingURL=signin.css.map */
