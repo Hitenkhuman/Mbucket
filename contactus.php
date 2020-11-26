@@ -198,7 +198,7 @@ session_start();
                 </div>
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="email" name="email" id="email" class="form-control" data-toggle="tooltip" data-placement="right" title="Enter Email">
+                    <input type="email" name="email" id="email" class="form-control" data-toggle="tooltip" data-placement="right" title="Enter Email" required>
 
                 </div>
                 <div class="form-group">
@@ -209,12 +209,13 @@ session_start();
 
                 <div class="form-group">
                     <label for="sugest">Suggestions</label>
-                    <textarea name="" id="sugest" cols="45" rows="4" class="form-control" data-toggle="tooltip" data-placement="right" title="Suggestions"></textarea>
+                    <textarea name="" id="sugest" cols="45" rows="4" class="form-control" data-toggle="tooltip" data-placement="right" title="Suggestions" required></textarea>
 
                 </div>
                 <div class="form-group">
-                    <button class="btn btn-primary" type="submit">Submit</button>
+                    <button class="btn btn-primary" type="submit" id="fedbacksub">Submit</button>
                 </div>
+                <span id="fmsg"></span>
             </div>
             <div class="col-12 col-md-4">
                 <h3>Contact Us</h3>
@@ -398,6 +399,7 @@ session_start();
     </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="./js/loginall.js"></script>
+    <script src="./js/feedback.js"></script>
     <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>

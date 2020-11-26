@@ -111,7 +111,38 @@ session_start();
   </nav>
   <?php
   if (isset($_SESSION['loginmsg']) || isset($_SESSION['signin'])) {
-    echo '';
+    echo ' <div id="myModal" class="modal fade">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header" style="background-color: #242582;">
+          <img src="./images/logo.png">
+          <button type="button" class="close" data-dismiss="modal" style="color: white;">&times;</button>
+        </div>
+        <div class="modal-body">
+          <h3 class="modal-title" style="color: green;">Wellcome to M-bucket</h3>
+          <h5 class="mt-3">
+            <p>
+              Have you seen latest mobiles on our site
+
+            </p>
+
+          </h5>
+          <h5 class="mt-3 text-success">
+            <p>
+              No??
+
+            </p>
+
+          </h5>
+
+          <form>
+            <a href="mobiles.php" class="btn btn-info" style="background-color: #242582;">Check it Now</a>
+            <button type="cancel" class="btn btn-danger" data-dismiss="modal">cancel</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>';
   }
   unset($_SESSION['signin']);
   unset($_SESSION['loginmsg']);
@@ -174,28 +205,6 @@ session_start();
     </div>
   </div>
 
-  <div id="myModal" class="modal fade">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Wellcome to M-bucket</h5>
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-        </div>
-        <div class="modal-body">
-          <p>Subscribe to our mailing list to get the latest updates straight in your inbox.</p>
-          <form>
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Name">
-            </div>
-            <div class="form-group">
-              <input type="email" class="form-control" placeholder="Email Address">
-            </div>
-            <button type="submit" class="btn btn-primary">Subscribe</button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
 
 
   <div class="main">
