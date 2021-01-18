@@ -9,9 +9,10 @@ session_start();
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/4dedb1023f.js" crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Search results</title>
+    <title>
+        Sign in</title>
+    <link rel="stylesheet" href="./css/signin.css">
     <link rel="icon" href="./images/M.png" type="image/png">
-    <link rel="stylesheet" href="./css/livesearch.css">
 </head>
 
 <body>
@@ -41,9 +42,9 @@ session_start();
 
             <div class="col-2 col-md-1 order-1 order-md-11 pt-2">
 
-                <a href="signin.php" style="color: white;" data-toggle="tooltip" data-placement="bottom" title="Sign in">
+                <!-- <a href="signin.php" style="color: white;" data-toggle="tooltip" data-placement="bottom" title="Sign in">
                     <span class="fas fa-user-plus"></span>
-                </a>
+                </a> -->
 
             </div>
             <div class="col-2 col-md-1 order-2 order-md-12" style="margin-top: 1px;">
@@ -73,6 +74,10 @@ session_start();
 
         </div>
 
+
+
+
+
     </header>
 
     <nav class="navbar navbar-expand-sm">
@@ -85,13 +90,9 @@ session_start();
                 <li class="nav-item pl-5">
                     <a class="nav-link" href="mobiles.php">Mobiles</a>
                 </li>
-                <?php
-        if (isset($_SESSION['login'])) {
-          echo '<li class="nav-item pl-5">
-          <a class="nav-link" href="compare.php">Compare</a>
-        </li>';
-        }
-        ?>
+                <li class="nav-item pl-5">
+                    <a class="nav-link" href="compare.php">Compare</a>
+                </li>
                 <li class="nav-item pl-5">
                     <a class="nav-link" href="pricesearch.php">Price-Search</a>
                 </li>
@@ -128,6 +129,7 @@ session_start();
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
                 <div class="modal-body">
+                    <h1>Sign in</h1>
                     <form>
                         <div class="form-row">
                             <div class="form-group col-11 row">
@@ -168,66 +170,62 @@ session_start();
     </div>
 
 
-    <div class="main">
-        <div class="container">
-            <?php
-            try {
-                require_once "pdo.php";
-                if (isset($_POST['searchtext'])) {
-                    $sql = "SELECT * FROM brands INNER JOIN models ON brands.brand_id=models.brand_id JOIN mobiles ON models.model_id=mobiles.model_id WHERE brand_name LIKE CONCAT('%',:st,'%') OR mobile_name LIKE CONCAT('%',:st,'%') OR price BETWEEN :st-5000 AND :st+5000";
-                    $stmt = $pdo->prepare($sql);
-                    $stmt->execute(array(':st' => strtolower($_POST['searchtext'])));
-                    if ($row = $stmt->fetchAll(PDO::FETCH_ASSOC)) {
-                        echo '<h3 class="p-3">Showing Results for.."<span class="text-danger">' . $_POST['searchtext'] . '</span>"</h3>';
-                        foreach ($row as $key => $value) {
-                            $mobimg = $value['mobile_image'];
+    <div class="container pt-5">
+        <div class="form-group">
 
-                            echo ' <div class="row mbox rbx m-5">';
-                            echo '<div class="col-12 col-md-5">';
-                            echo ' <img src="./images/' . $mobimg . '.png" alt="mobile image" class="img-fluid">';
-                            echo ' </div>';
-                            echo '<div class="col-12 col-md-7">';
-                            echo ' <div class="pt-md-3">';
-                            echo '<h1 class="mobname">' . $value["brand_name"] . ' ' . $value["mobile_name"] . '</h1>';
-                            echo '</div>';
-                            echo ' <div class="price">';
-                            echo ' <h2><span> ₹ </span><span>' . $value["price"] . '</span></h2>';
-                            echo ' </div>';
-                            echo '<div class="rating">';
-                            for ($i = 0; $i < $value['recommendation']; $i++) {
-                                echo '<span class="fa fa-star checked"></span>';
-                            }
-                            $remain = 10 - $value['recommendation'];
-                            for ($i = 0; $i < $remain; $i++) {
-                                echo '<span class="fa fa-star"></span>';
-                            }
-                            echo '</div>';
-                            echo ' <div class="info">';
-                            echo ' <a href="mobileinfo.php?id=' . $value['model_id'] . '"  class="ckitbtn btn mt-3">Check it</a>';
-                            echo ' </div>';
-                            echo '  </div>';
-                            echo '</div>';
-                        }
-                    } else {
-                        echo '<div>
-                        <div class="main1">
-                            <h1 style="font-size: 70px;color:red;">Oops....</h1>
-                            <h1 style="font-size: 50px;color:blue;">Mobiles Not Found</h1>
-                            <p>Search something else...<br />try another price?</p>
-                            <a class="fbtn btn" href="index.php">Home</a>
-                        </div>
-                    </div>';
-                    }
-                }
-            } catch (PDOException $error) {
-                echo "ERROR" . $error->getMessage();
-            }
-
-
-
-            ?>
+            <input type="text" id="mobile" class="form-control" placeholder="Mobile" aria-describedby="mobileHelp">
+            <small id="mobileHelp" class="text-muted">Must add country code first</small>
         </div>
+        <div id="cap"></div>
+        <button type="button" id="otpbtn" class="btn btn-primary">GET OTP</button>
+        <div class="form-group">
+
+            <input type="text" id="otp" class="form-control" placeholder="Enter  OTP" aria-describedby="otpHelp">
+            <small id="otpHelp" class="text-muted"></small>
+        </div>
+        <button type="button" id="mobileCon" class="btn btn-primary" btn-lg btn-block>Verify</button>
+        <span id="minfo"></span>
+        <div class="form-group">
+
+            <input type="email" id="email" class="form-control" placeholder="E-mail" aria-describedby="emailHelp">
+            <small id="emailHelp" class="text-muted"></small>
+        </div>
+
+        <div class="form-group">
+
+            <input type="password" class="form-control" id="pass" placeholder="Password">
+            <small id="passhelp" class="text-muted"></small>
+        </div>
+        <div class="form-group">
+
+            <input type="password" class="form-control" id="cpass" placeholder="Confirm Password">
+            <small id="conpasshelp" class="text-muted"></small>
+        </div>
+        <button type="button" id="emailbtn" class="btn btn-primary">Verify Email</button><br>
+        <span id="eminfo"></span><br>
+        <button type="button" id="signin" class="btn btn-success" disabled>Sign In</button>
     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     <footer class="page-footer font-small text-black">
 
@@ -354,8 +352,10 @@ session_start();
         <!-- Footer Links -->
 
     </footer>
+    <script src="https://www.gstatic.com/firebasejs/4.3.1/firebase.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="./js/loginall.js"></script>
+    <script src="./js/signinfirebase.js"></script>
     <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>

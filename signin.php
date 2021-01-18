@@ -90,9 +90,13 @@ session_start();
                 <li class="nav-item pl-5">
                     <a class="nav-link" href="mobiles.php">Mobiles</a>
                 </li>
-                <li class="nav-item pl-5">
-                    <a class="nav-link" href="compare.php">Compare</a>
-                </li>
+                <?php
+        if (isset($_SESSION['login'])) {
+          echo '<li class="nav-item pl-5">
+          <a class="nav-link" href="compare.php">Compare</a>
+        </li>';
+        }
+        ?>
                 <li class="nav-item pl-5">
                     <a class="nav-link" href="pricesearch.php">Price-Search</a>
                 </li>
@@ -222,7 +226,7 @@ session_start();
                     </div>
                     <div class="col-12 col-md-2" id="clock">
                         <span id="timer"></span>
-                        <div><small>OTP valid for 1 minute only...</small></div>
+                        <div><small>OTP is valid for 1 minute only...</small></div>
                     </div>
 
                 </div>

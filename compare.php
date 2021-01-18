@@ -1,9 +1,11 @@
 <?php
 session_start();
+if (!$_SESSION['login']) {
+    header("location:index.php");
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
@@ -89,9 +91,13 @@ session_start();
                 <li class="nav-item pl-5">
                     <a class="nav-link" href="mobiles.php">Mobiles</a>
                 </li>
-                <li class="nav-item pl-5">
-                    <a class="nav-link current" href="compare.php">Compare</a>
-                </li>
+                <?php
+        if (isset($_SESSION['login'])) {
+          echo '<li class="nav-item pl-5">
+          <a class="nav-link" href="compare.php">Compare</a>
+        </li>';
+        }
+        ?>
                 <li class="nav-item pl-5">
                     <a class="nav-link" href="pricesearch.php">Price-Search</a>
                 </li>

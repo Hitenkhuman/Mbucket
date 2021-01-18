@@ -1,4 +1,13 @@
 @import "./colors";
+body,
+html,
+div,
+h1,
+h2,
+p {
+  margin: 0px;
+  padding: 0px;
+}
 .headernav {
   background-color: $nav;
   color: white;

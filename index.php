@@ -16,7 +16,7 @@ session_start();
 </head>
 
 <body>
-  <header class="headernav container-fluid sticky-top">
+  <header class="headernav container-fluid">
     <div class="row p-2">
       <div class="col-1 d-sm-none m-1">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -90,9 +90,14 @@ session_start();
         <li class="nav-item pl-5">
           <a class="nav-link" href="mobiles.php">Mobiles</a>
         </li>
-        <li class="nav-item pl-5">
+        <?php
+        if (isset($_SESSION['login'])) {
+          echo '<li class="nav-item pl-5">
           <a class="nav-link" href="compare.php">Compare</a>
-        </li>
+        </li>';
+        }
+        ?>
+        
         <li class="nav-item pl-5">
           <a class="nav-link" href="pricesearch.php">Price-Search</a>
         </li>
@@ -218,22 +223,19 @@ session_start();
         <div class="carousel-item active">
           <img src="https://images.samsung.com/is/image/samsung/assets/in/galaxy-note20/home/z-fold2-part2/Z_Fold2_farewell_flat_Home_MainCarousel_KV_1440X640.jpg?$ORIGIN_JPG$" class="d-block w-100" alt="...">
           <div class="carousel-caption d-none d-md-block">
-            <h5>First slide label</h5>
-            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+            
           </div>
         </div>
         <div class="carousel-item">
           <img src="https://images.samsung.com/is/image/samsung/p5/in/microsite/galaxy-m/m51/banner4.jpg?$ORIGIN_JPG$" class="d-block w-100" alt="...">
           <div class="carousel-caption d-none d-md-block">
-            <h5>Second slide label</h5>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+           
           </div>
         </div>
         <div class="carousel-item">
           <img src="https://images.samsung.com/is/image/samsung/p5/in/microsite/galaxy-m/m51/processor_video2.jpg?$ORIGIN_JPG$" class="d-block w-100" alt="...">
           <div class="carousel-caption d-none d-md-block">
-            <h5>Third slide label</h5>
-            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+           
           </div>
         </div>
       </div>

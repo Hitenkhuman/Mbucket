@@ -71,9 +71,13 @@ session_start();
                 <li class="nav-item pl-5">
                     <a class="nav-link" href="mobiles.php">Mobiles</a>
                 </li>
-                <li class="nav-item pl-5">
-                    <a class="nav-link" href="compare.php">Compare</a>
-                </li>
+                <?php
+        if (isset($_SESSION['login'])) {
+          echo '<li class="nav-item pl-5">
+          <a class="nav-link" href="compare.php">Compare</a>
+        </li>';
+        }
+        ?>
                 <li class="nav-item pl-5">
                     <a class="nav-link" href="pricesearch.php">Price-Search</a>
                 </li>

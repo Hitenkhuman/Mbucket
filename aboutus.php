@@ -91,9 +91,13 @@ session_start();
                 <li class="nav-item pl-5">
                     <a class="nav-link" href="mobiles.php">Mobiles</a>
                 </li>
-                <li class="nav-item pl-5">
-                    <a class="nav-link" href="compare.php">Compare</a>
-                </li>
+                <?php
+        if (isset($_SESSION['login'])) {
+          echo '<li class="nav-item pl-5">
+          <a class="nav-link" href="compare.php">Compare</a>
+        </li>';
+        }
+        ?>
                 <li class="nav-item pl-5">
                     <a class="nav-link" href="pricesearch.php">Price-Search</a>
                 </li>
@@ -175,23 +179,25 @@ session_start();
                 <img src="./images/aboutus.png" alt="contactus" width="100%">
             </div>
             <div class="row">
-
-                <div class="content col-md-8 col-12 order-2 order-md-1">
+                <div class="col-12 mt-5">
+                <img src="./images/biglogo.png" alt="logo" >
+                </div>
+                <div class="content col-md-7">
                     <p class="text-success h3 pt-3">
                         M-bucket is the go-to destination for Mobile specification.
                     </p>
-                    <p class="h5">
-                        In current situation is that finding best suitable mobile for us is vary difficult.
+                    <p class="h5 pt-3" style="text-align: justify;">
+                    The vast majority of people in developed countries own a smartphone and most of those phones are filled with apps. It is getting to the point now where, in order to compete, and particularly to be able to offer customers a customized and unique shopping and purchasing experience, businesses need a mobile app. Not only that, but we live in an age where ideas of progress are intimately bound up with those of efficiency and automation. Apps are created to make every facet of human life easier, more predictable, and more entertaining. 
+                    </p>
+                    <p class="h5 pt-3" style="text-align: justify;">
+                        In current situation  finding best suitable mobile for us is vary difficult.
                         so we give all information like price, camera, processer, and many information that will help you to find best mobile for you.
                     </p>
-                    <p class="h5">
+                    <p class="h5 pt-3" style="text-align: justify;">
                         In our website we provide all mobile specification of different companies, comparison of two different mobiles,news of new arrival and upcoming mobiles, mobiles with price-search.
                     </p>
                 </div>
-                <div class="col-md-4 col-12 order-1 order-md-2">
-                    <img src="./images/biglogo.png" alt="logo" width="98%">
-
-                </div>
+                
 
             </div>
         </div>
